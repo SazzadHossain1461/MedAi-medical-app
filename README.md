@@ -292,4 +292,4 @@ If this project helped you, **please give it a star!** ⭐
 It motivates future development.
 
                                                                                           
-### Made with ❤️ for better healthcare
+### Made with ❤️ for better healthcare 🏥 🇧🇩
