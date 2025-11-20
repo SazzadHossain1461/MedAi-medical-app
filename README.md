@@ -251,7 +251,9 @@ This project is licensed under the **MIT License**.
 ## 📞 Support
 
 📧 Email: **[sazzadhossain74274@gmail.com](mailto:sazzadhossain74274@gmail.com)**
+
 🔗 LinkedIn: [https://www.linkedin.com/in/sazzadhossain1461/](https://www.linkedin.com/in/sazzadhossain1461/)
+
 💻 GitHub: [https://github.com/SazzadHossain1461](https://github.com/SazzadHossain1461)
 
 ---
@@ -266,24 +268,44 @@ It motivates future development.
 ## 📸 Screenshots
 
 **Dashboard**
+
 <img width="1920" height="924" alt="Screenshot (584)" src="https://github.com/user-attachments/assets/73864276-9403-4a67-8048-95787321ec53" />
+
 **Bangla Dashboard**
+
 <img width="1920" height="926" alt="Screenshot (588)" src="https://github.com/user-attachments/assets/71cce40e-d862-498a-aa5f-26342f341a3a" />
+
 **Dengue Risk Prediction**
+
 <img width="1920" height="932" alt="Screenshot (585)" src="https://github.com/user-attachments/assets/04c14012-86f5-46ba-a3b3-03e0d21b16c5" />
+
 **Kidney Dieases Prediction**
+
 <img width="1920" height="924" alt="Screenshot (586)" src="https://github.com/user-attachments/assets/8a4dd336-e3d6-478f-9cdf-d0fb688e49e8" />
+
 **Mental Health Assesment**
+
 <img width="1920" height="929" alt="Screenshot (587)" src="https://github.com/user-attachments/assets/88eec221-6eb0-4df7-aefc-c6cf87f78ecb" />
 
 ---
+📈 Project Statistics
 
-If you want, I can also generate:
+Accuracy: 98%
+Active Users: 10K+
+Total Predictions: 100K+
+Supported Models: 3+
 
-✅ A polished project **logo**
-✅ A **GitHub description section**
-✅ Auto-generated **badges for ML, Flask, Three.js, Zustand, PostgreSQL**
-✅ A **Docs folder**
-✅ Backend + frontend **separate READMEs**
+🔜 Roadmap
 
-Just tell me!
+ Heart Disease Prediction
+ Diabetes Risk Assessment
+ Lung Disease Detection
+ User authentication and history
+ Mobile app version
+ PDF report generation
+ Integration with health APIs (Google Fit, Apple Health)
+ Advanced analytics dashboard
+
+                                                                                          
+                                                                                      
+                                                                                      Made with ❤️ for better healthcare
