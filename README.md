@@ -14,7 +14,7 @@
 **MedAi** is a full-stack AI healthcare platform designed to predict:
 
 * 🦟 **Dengue Risk Level**
-* 🫘 **Kidney Disease Probability**
+* 🩺 **Kidney Disease Probability**
 * 🧠 **Mental Health / Stress Assessment**
 
 The system features a **3D animated UI**, bilingual support (English & Bangla), ML models trained on real datasets, and a secure Flask API.
