@@ -288,24 +288,5 @@ It motivates future development.
 <img width="1920" height="929" alt="Screenshot (587)" src="https://github.com/user-attachments/assets/88eec221-6eb0-4df7-aefc-c6cf87f78ecb" />
 
 ---
-📈 Project Statistics
-
-Accuracy: 98%
-Active Users: 10K+
-Total Predictions: 100K+
-Supported Models: 3+
-
-🔜 Roadmap
-
- Heart Disease Prediction
- Diabetes Risk Assessment
- Lung Disease Detection
- User authentication and history
- Mobile app version
- PDF report generation
- Integration with health APIs (Google Fit, Apple Health)
- Advanced analytics dashboard
-
                                                                                           
-                                                                                      
-                                                                                      Made with ❤️ for better healthcare
+Made with ❤️ for better healthcare
