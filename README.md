@@ -244,27 +244,27 @@ git push origin feature/my-feature
 
 ## 📸 Screenshots
 
-**Dashboard**
+**Dashboard**:
 
 <img width="1891" height="924" alt="Screenshot (584)" src="https://github.com/user-attachments/assets/e3acf901-ce57-4fff-a290-c72f13973807" />
 
 
-**Bangla Dashboard**
+**Bangla Dashboard**:
 
 <img width="1898" height="926" alt="Screenshot (588)" src="https://github.com/user-attachments/assets/a8d508ec-a4c3-4820-99c5-74c3ba78f3cf" />
 
 
-**Dengue Risk Prediction**
+**Dengue Risk Prediction**:
 
 <img width="1899" height="929" alt="Screenshot (585)" src="https://github.com/user-attachments/assets/0f99a6fa-5fea-453a-a411-b19af9350f5e" />
 
 
-**Kidney Dieases Prediction**
+**Kidney Dieases Prediction**:
 
 <img width="1898" height="915" alt="Screenshot (586)" src="https://github.com/user-attachments/assets/dcf515ea-ea14-4636-89d6-6642e5b13a24" />
 
 
-**Mental Health Assesment**
+**Mental Health Assesment**:
 
 <img width="1891" height="923" alt="Screenshot (587)" src="https://github.com/user-attachments/assets/78a551f9-7386-4927-8fdf-011f68dc7979" />
 
