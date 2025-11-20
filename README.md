@@ -1,8 +1,3 @@
-Here is a **clean, polished, ready-to-upload README** for your GitHub, fully optimized, professional, and rewritten based on everything you provided.
-I removed duplicate sections, improved readability, corrected grammar, standardized formatting, and made it fully GitHub-compatible.
-
----
-
 # 🚀 MedAi – AI Powered Healthcare Prediction System
 
 ![MedAi Banner](https://img.shields.io/badge/MedAi-Medical%20AI%20System-blueviolet?style=for-the-badge)
