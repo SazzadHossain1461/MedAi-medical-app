@@ -242,29 +242,6 @@ git push origin feature/my-feature
 
 ---
 
-## 📝 License
-
-This project is licensed under the **MIT License**.
-
----
-
-## 📞 Support
-
-📧 Email: **[sazzadhossain74274@gmail.com](mailto:sazzadhossain74274@gmail.com)**
-
-🔗 LinkedIn: [https://www.linkedin.com/in/sazzadhossain1461/](https://www.linkedin.com/in/sazzadhossain1461/)
-
-💻 GitHub: [https://github.com/SazzadHossain1461](https://github.com/SazzadHossain1461)
-
----
-
-## ⭐ Star the Repository
-
-If this project helped you, **please give it a star!** ⭐
-It motivates future development.
-
----
-
 ## 📸 Screenshots
 
 **Dashboard**
@@ -293,5 +270,26 @@ It motivates future development.
 
 
 ---
+## 📝 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## 📞 Support
+
+📧 Email: **[sazzadhossain74274@gmail.com](mailto:sazzadhossain74274@gmail.com)**
+
+🔗 LinkedIn: [https://www.linkedin.com/in/sazzadhossain1461/](https://www.linkedin.com/in/sazzadhossain1461/)
+
+💻 GitHub: [https://github.com/SazzadHossain1461](https://github.com/SazzadHossain1461)
+
+---
+
+## ⭐ Star the Repository
+
+If this project helped you, **please give it a star!** ⭐
+It motivates future development.
+
                                                                                           
 ### Made with ❤️ for better healthcare
