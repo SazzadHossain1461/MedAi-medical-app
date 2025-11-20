@@ -1,0 +1,33 @@
+{
+  "disease_type": "mental_health",
+  "optimal_threshold": 0.41999999999999993,
+  "test_metrics": {
+    "optimal_threshold": 0.41999999999999993,
+    "accuracy": 0.925,
+    "precision": 0.7105263157894737,
+    "recall": 0.8709677419354839,
+    "f1_score": 0.782608695652174,
+    "default_accuracy": 0.925,
+    "improvement": 0.0,
+    "disease_type": "mental_health"
+  },
+  "features_used": [
+    "age",
+    "gender",
+    "employment",
+    "work_env",
+    "stress",
+    "sleep",
+    "activity",
+    "depression",
+    "anxiety",
+    "support",
+    "productivity",
+    "mh_history",
+    "treatment"
+  ],
+  "model_architecture": "Sequential_64_32_16_1",
+  "training_samples": 600,
+  "validation_samples": 200,
+  "test_samples": 200
+}

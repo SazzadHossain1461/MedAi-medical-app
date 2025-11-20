@@ -1,0 +1,588 @@
+2025-11-19 17:58:18,364 - __main__ - INFO - Directory ensured: models
+2025-11-19 17:58:18,364 - __main__ - INFO - Directory ensured: logs
+2025-11-19 17:58:18,364 - __main__ - INFO - Directory ensured: datasets
+2025-11-19 17:58:18,364 - __main__ - INFO - Directory ensured: database
+2025-11-19 17:58:18,364 - __main__ - INFO - Directory ensured: instance
+2025-11-19 17:58:18,364 - __main__ - INFO - ============================================================
+2025-11-19 17:58:18,364 - __main__ - INFO - Starting Training for All Models
+2025-11-19 17:58:18,364 - __main__ - INFO - ============================================================
+2025-11-19 17:58:53,099 - __main__ - INFO - Database initialized successfully
+2025-11-19 17:58:53,099 - __main__ - INFO - ============================================================
+2025-11-19 17:58:53,099 - __main__ - INFO - Starting Dengue Model Training
+2025-11-19 17:58:53,099 - __main__ - INFO - ============================================================
+2025-11-19 17:58:53,552 - __main__ - ERROR - Error training dengue model: invalid syntax (reinforcement_learning.py, line 79)
+2025-11-19 17:58:53,552 - __main__ - INFO - ============================================================
+2025-11-19 17:58:53,552 - __main__ - INFO - Starting Kidney Disease Model Training
+2025-11-19 17:58:53,552 - __main__ - INFO - ============================================================
+2025-11-19 17:58:53,552 - __main__ - ERROR - Error training kidney model: invalid syntax (reinforcement_learning.py, line 79)
+2025-11-19 17:58:53,567 - __main__ - INFO - ============================================================
+2025-11-19 17:58:53,567 - __main__ - INFO - Starting Mental Health Model Training
+2025-11-19 17:58:53,567 - __main__ - INFO - ============================================================
+2025-11-19 17:58:53,567 - __main__ - ERROR - Error training mental health model: invalid syntax (reinforcement_learning.py, line 79)
+2025-11-19 17:58:53,567 - __main__ - WARNING - Only 0/3 models trained successfully
+2025-11-20 02:03:33,373 - __main__ - INFO - Directory ensured: models
+2025-11-20 02:03:33,373 - __main__ - INFO - Directory ensured: logs
+2025-11-20 02:03:33,373 - __main__ - INFO - Directory ensured: datasets
+2025-11-20 02:03:33,373 - __main__ - INFO - Directory ensured: database
+2025-11-20 02:03:33,373 - __main__ - INFO - Directory ensured: instance
+2025-11-20 02:03:33,373 - __main__ - INFO - ============================================================
+2025-11-20 02:03:33,373 - __main__ - INFO - Starting Training for All Models
+2025-11-20 02:03:33,373 - __main__ - INFO - ============================================================
+2025-11-20 02:04:19,823 - __main__ - INFO - Database initialized successfully
+2025-11-20 02:04:19,823 - __main__ - INFO - ============================================================
+2025-11-20 02:04:19,823 - __main__ - INFO - Starting Dengue Model Training
+2025-11-20 02:04:19,823 - __main__ - INFO - ============================================================
+2025-11-20 02:04:20,014 - __main__ - ERROR - Error training dengue model: invalid syntax (reinforcement_learning.py, line 79)
+2025-11-20 02:04:20,014 - __main__ - INFO - ============================================================
+2025-11-20 02:04:20,014 - __main__ - INFO - Starting Kidney Disease Model Training
+2025-11-20 02:04:20,014 - __main__ - INFO - ============================================================
+2025-11-20 02:04:20,014 - __main__ - ERROR - Error training kidney model: invalid syntax (reinforcement_learning.py, line 79)
+2025-11-20 02:04:20,014 - __main__ - INFO - ============================================================
+2025-11-20 02:04:20,014 - __main__ - INFO - Starting Mental Health Model Training
+2025-11-20 02:04:20,014 - __main__ - INFO - ============================================================
+2025-11-20 02:04:20,030 - __main__ - ERROR - Error training mental health model: invalid syntax (reinforcement_learning.py, line 79)
+2025-11-20 02:04:20,030 - __main__ - WARNING - Only 0/3 models trained successfully
+2025-11-20 02:07:48,010 - __main__ - INFO - Directory ensured: models
+2025-11-20 02:07:48,025 - __main__ - INFO - Directory ensured: logs
+2025-11-20 02:07:48,025 - __main__ - INFO - Directory ensured: datasets
+2025-11-20 02:07:48,025 - __main__ - INFO - Directory ensured: database
+2025-11-20 02:07:48,025 - __main__ - INFO - Directory ensured: instance
+2025-11-20 02:07:48,025 - __main__ - INFO - ============================================================
+2025-11-20 02:07:48,025 - __main__ - INFO - Starting Training for All Models
+2025-11-20 02:07:48,025 - __main__ - INFO - ============================================================
+2025-11-20 02:08:12,292 - __main__ - INFO - Database initialized successfully
+2025-11-20 02:08:12,292 - __main__ - INFO - ============================================================
+2025-11-20 02:08:12,292 - __main__ - INFO - Starting Dengue Model Training
+2025-11-20 02:08:12,292 - __main__ - INFO - ============================================================
+2025-11-20 02:08:12,355 - training_pipeline - INFO - Starting training pipeline for DENGUE
+2025-11-20 02:08:12,355 - training_pipeline - INFO - Preparing dengue data...
+2025-11-20 02:08:12,355 - training_pipeline - INFO - Generating sample data for dengue...
+2025-11-20 02:08:12,714 - training_pipeline - INFO - Training supervised model for dengue...
+2025-11-20 02:08:12,714 - training_pipeline - INFO - Building model for dengue...
+2025-11-20 02:08:17,695 - training_pipeline - ERROR - Error in training pipeline for dengue: in user code:
+
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1377, in train_function  *
+        return step_function(self, iterator)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1360, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1349, in run_step  **
+        outputs = model.train_step(data)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1131, in train_step
+        return self.compute_metrics(x, y, y_pred, sample_weight)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1225, in compute_metrics
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\compile_utils.py", line 620, in update_state
+        metric_obj.update_state(y_t, y_p, sample_weight=mask)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\utils\metrics_utils.py", line 77, in decorated
+        result = update_state_fn(*args, **kwargs)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\metrics\base_metric.py", line 140, in update_state_fn
+        return ag_update_state(*args, **kwargs)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\metrics\base_metric.py", line 723, in update_state  **
+        matches = ag_fn(y_true, y_pred, **self._fn_kwargs)
+
+    TypeError: 'str' object is not callable
+
+2025-11-20 02:08:17,695 - __main__ - ERROR - Error training dengue model: in user code:
+
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1377, in train_function  *
+        return step_function(self, iterator)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1360, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1349, in run_step  **
+        outputs = model.train_step(data)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1131, in train_step
+        return self.compute_metrics(x, y, y_pred, sample_weight)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1225, in compute_metrics
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\compile_utils.py", line 620, in update_state
+        metric_obj.update_state(y_t, y_p, sample_weight=mask)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\utils\metrics_utils.py", line 77, in decorated
+        result = update_state_fn(*args, **kwargs)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\metrics\base_metric.py", line 140, in update_state_fn
+        return ag_update_state(*args, **kwargs)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\metrics\base_metric.py", line 723, in update_state  **
+        matches = ag_fn(y_true, y_pred, **self._fn_kwargs)
+
+    TypeError: 'str' object is not callable
+
+2025-11-20 02:08:17,695 - __main__ - INFO - ============================================================
+2025-11-20 02:08:17,695 - __main__ - INFO - Starting Kidney Disease Model Training
+2025-11-20 02:08:17,695 - __main__ - INFO - ============================================================
+2025-11-20 02:08:17,710 - training_pipeline - INFO - Starting training pipeline for KIDNEY
+2025-11-20 02:08:17,710 - training_pipeline - INFO - Preparing kidney data...
+2025-11-20 02:08:17,710 - training_pipeline - INFO - Generating sample data for kidney...
+2025-11-20 02:08:17,710 - training_pipeline - INFO - Training supervised model for kidney...
+2025-11-20 02:08:17,710 - training_pipeline - INFO - Building model for kidney...
+2025-11-20 02:08:18,132 - training_pipeline - ERROR - Error in training pipeline for kidney: in user code:
+
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1377, in train_function  *
+        return step_function(self, iterator)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1360, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1349, in run_step  **
+        outputs = model.train_step(data)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1131, in train_step
+        return self.compute_metrics(x, y, y_pred, sample_weight)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1225, in compute_metrics
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\compile_utils.py", line 620, in update_state
+        metric_obj.update_state(y_t, y_p, sample_weight=mask)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\utils\metrics_utils.py", line 77, in decorated
+        result = update_state_fn(*args, **kwargs)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\metrics\base_metric.py", line 140, in update_state_fn
+        return ag_update_state(*args, **kwargs)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\metrics\base_metric.py", line 723, in update_state  **
+        matches = ag_fn(y_true, y_pred, **self._fn_kwargs)
+
+    TypeError: 'str' object is not callable
+
+2025-11-20 02:08:18,132 - __main__ - ERROR - Error training kidney model: in user code:
+
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1377, in train_function  *
+        return step_function(self, iterator)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1360, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1349, in run_step  **
+        outputs = model.train_step(data)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1131, in train_step
+        return self.compute_metrics(x, y, y_pred, sample_weight)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1225, in compute_metrics
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\compile_utils.py", line 620, in update_state
+        metric_obj.update_state(y_t, y_p, sample_weight=mask)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\utils\metrics_utils.py", line 77, in decorated
+        result = update_state_fn(*args, **kwargs)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\metrics\base_metric.py", line 140, in update_state_fn
+        return ag_update_state(*args, **kwargs)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\metrics\base_metric.py", line 723, in update_state  **
+        matches = ag_fn(y_true, y_pred, **self._fn_kwargs)
+
+    TypeError: 'str' object is not callable
+
+2025-11-20 02:08:18,132 - __main__ - INFO - ============================================================
+2025-11-20 02:08:18,132 - __main__ - INFO - Starting Mental Health Model Training
+2025-11-20 02:08:18,132 - __main__ - INFO - ============================================================
+2025-11-20 02:08:18,132 - training_pipeline - INFO - Starting training pipeline for MENTAL_HEALTH
+2025-11-20 02:08:18,132 - training_pipeline - INFO - Preparing mental_health data...
+2025-11-20 02:08:18,148 - training_pipeline - INFO - Generating sample data for mental_health...
+2025-11-20 02:08:18,148 - training_pipeline - INFO - Training supervised model for mental_health...
+2025-11-20 02:08:18,148 - training_pipeline - INFO - Building model for mental_health...
+2025-11-20 02:08:18,536 - training_pipeline - ERROR - Error in training pipeline for mental_health: in user code:
+
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1377, in train_function  *
+        return step_function(self, iterator)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1360, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1349, in run_step  **
+        outputs = model.train_step(data)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1131, in train_step
+        return self.compute_metrics(x, y, y_pred, sample_weight)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1225, in compute_metrics
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\compile_utils.py", line 620, in update_state
+        metric_obj.update_state(y_t, y_p, sample_weight=mask)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\utils\metrics_utils.py", line 77, in decorated
+        result = update_state_fn(*args, **kwargs)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\metrics\base_metric.py", line 140, in update_state_fn
+        return ag_update_state(*args, **kwargs)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\metrics\base_metric.py", line 723, in update_state  **
+        matches = ag_fn(y_true, y_pred, **self._fn_kwargs)
+
+    TypeError: 'str' object is not callable
+
+2025-11-20 02:08:18,536 - __main__ - ERROR - Error training mental health model: in user code:
+
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1377, in train_function  *
+        return step_function(self, iterator)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1360, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1349, in run_step  **
+        outputs = model.train_step(data)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1131, in train_step
+        return self.compute_metrics(x, y, y_pred, sample_weight)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1225, in compute_metrics
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\compile_utils.py", line 620, in update_state
+        metric_obj.update_state(y_t, y_p, sample_weight=mask)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\utils\metrics_utils.py", line 77, in decorated
+        result = update_state_fn(*args, **kwargs)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\metrics\base_metric.py", line 140, in update_state_fn
+        return ag_update_state(*args, **kwargs)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\metrics\base_metric.py", line 723, in update_state  **
+        matches = ag_fn(y_true, y_pred, **self._fn_kwargs)
+
+    TypeError: 'str' object is not callable
+
+2025-11-20 02:08:18,536 - __main__ - WARNING - Only 0/3 models trained successfully
+2025-11-20 02:12:16,911 - __main__ - INFO - Directory ensured: models
+2025-11-20 02:12:16,927 - __main__ - INFO - Directory ensured: logs
+2025-11-20 02:12:16,927 - __main__ - INFO - Directory ensured: datasets
+2025-11-20 02:12:16,927 - __main__ - INFO - Directory ensured: database
+2025-11-20 02:12:16,927 - __main__ - INFO - Directory ensured: instance
+2025-11-20 02:12:16,927 - __main__ - INFO - ============================================================
+2025-11-20 02:12:16,927 - __main__ - INFO - Starting Training for All Models
+2025-11-20 02:12:16,927 - __main__ - INFO - ============================================================
+2025-11-20 02:12:36,365 - __main__ - INFO - Database initialized successfully
+2025-11-20 02:12:36,365 - __main__ - INFO - ============================================================
+2025-11-20 02:12:36,365 - __main__ - INFO - Starting Dengue Model Training
+2025-11-20 02:12:36,365 - __main__ - INFO - ============================================================
+2025-11-20 02:12:36,443 - __main__ - ERROR - Error training dengue model: __init__() takes 1 positional argument but 2 were given
+2025-11-20 02:12:36,443 - __main__ - INFO - ============================================================
+2025-11-20 02:12:36,443 - __main__ - INFO - Starting Kidney Disease Model Training
+2025-11-20 02:12:36,443 - __main__ - INFO - ============================================================
+2025-11-20 02:12:36,459 - __main__ - ERROR - Error training kidney model: __init__() takes 1 positional argument but 2 were given
+2025-11-20 02:12:36,459 - __main__ - INFO - ============================================================
+2025-11-20 02:12:36,459 - __main__ - INFO - Starting Mental Health Model Training
+2025-11-20 02:12:36,459 - __main__ - INFO - ============================================================
+2025-11-20 02:12:36,459 - __main__ - ERROR - Error training mental health model: __init__() takes 1 positional argument but 2 were given
+2025-11-20 02:12:36,459 - __main__ - WARNING - Only 0/3 models trained successfully
+2025-11-20 02:16:52,590 - __main__ - INFO - Directory ensured: models
+2025-11-20 02:16:52,590 - __main__ - INFO - Directory ensured: logs
+2025-11-20 02:16:52,591 - __main__ - INFO - Directory ensured: datasets
+2025-11-20 02:16:52,591 - __main__ - INFO - Directory ensured: database
+2025-11-20 02:16:52,591 - __main__ - INFO - Directory ensured: instance
+2025-11-20 02:16:52,591 - __main__ - INFO - ============================================================
+2025-11-20 02:16:52,591 - __main__ - INFO - Starting Training for All Models
+2025-11-20 02:16:52,591 - __main__ - INFO - ============================================================
+2025-11-20 02:16:57,074 - __main__ - INFO - Database initialized successfully
+2025-11-20 02:16:57,074 - __main__ - INFO - ============================================================
+2025-11-20 02:16:57,074 - __main__ - INFO - Starting Dengue Model Training
+2025-11-20 02:16:57,074 - __main__ - INFO - ============================================================
+2025-11-20 02:16:57,090 - training_pipeline - INFO - Starting training pipeline for DENGUE
+2025-11-20 02:16:57,106 - training_pipeline - INFO - Preparing dengue data...
+2025-11-20 02:16:57,106 - training_pipeline - INFO - Generating sample data for dengue...
+2025-11-20 02:16:57,293 - training_pipeline - INFO - Training supervised model for dengue...
+2025-11-20 02:16:57,293 - training_pipeline - INFO - Building model for dengue...
+2025-11-20 02:17:09,261 - training_pipeline - INFO - Test Metrics - Loss: 0.1803, Accuracy: 0.9250, Precision: 0.8788, Recall: 0.8923, F1: 0.8855
+2025-11-20 02:17:09,558 - training_pipeline - INFO - Optimizing dengue model with RL...
+2025-11-20 02:17:10,112 - reward_system - INFO - Optimal threshold for dengue: 0.300 with reward: 0.8252
+2025-11-20 02:17:10,112 - training_pipeline - INFO - Optimal threshold: 0.300, Best reward: 0.8252
+2025-11-20 02:17:10,112 - reinforcement_learning - ERROR - Model for dengue not available
+2025-11-20 02:17:10,112 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-20 02:17:10,206 - training_pipeline - INFO - Training pipeline completed for DENGUE
+2025-11-20 02:17:10,222 - __main__ - INFO - ============================================================
+2025-11-20 02:17:10,222 - __main__ - INFO - Starting Kidney Disease Model Training
+2025-11-20 02:17:10,222 - __main__ - INFO - ============================================================
+2025-11-20 02:17:10,222 - training_pipeline - INFO - Starting training pipeline for KIDNEY
+2025-11-20 02:17:10,222 - training_pipeline - INFO - Preparing kidney data...
+2025-11-20 02:17:10,222 - training_pipeline - INFO - Generating sample data for kidney...
+2025-11-20 02:17:10,253 - training_pipeline - INFO - Training supervised model for kidney...
+2025-11-20 02:17:10,253 - training_pipeline - INFO - Building model for kidney...
+2025-11-20 02:17:14,239 - training_pipeline - INFO - Test Metrics - Loss: 0.2527, Accuracy: 0.9050, Precision: 0.9286, Recall: 0.9043, F1: 0.9163
+2025-11-20 02:17:14,301 - training_pipeline - INFO - Optimizing kidney model with RL...
+2025-11-20 02:17:14,567 - reward_system - INFO - Optimal threshold for kidney: 0.420 with reward: 0.8226
+2025-11-20 02:17:14,567 - training_pipeline - INFO - Optimal threshold: 0.420, Best reward: 0.8226
+2025-11-20 02:17:14,567 - reinforcement_learning - ERROR - Model for kidney not available
+2025-11-20 02:17:14,567 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-20 02:17:14,630 - training_pipeline - INFO - Training pipeline completed for KIDNEY
+2025-11-20 02:17:14,645 - __main__ - INFO - ============================================================
+2025-11-20 02:17:14,645 - __main__ - INFO - Starting Mental Health Model Training
+2025-11-20 02:17:14,645 - __main__ - INFO - ============================================================
+2025-11-20 02:17:14,645 - training_pipeline - INFO - Starting training pipeline for MENTAL_HEALTH
+2025-11-20 02:17:14,645 - training_pipeline - INFO - Preparing mental_health data...
+2025-11-20 02:17:14,645 - training_pipeline - INFO - Generating sample data for mental_health...
+2025-11-20 02:17:14,661 - training_pipeline - INFO - Training supervised model for mental_health...
+2025-11-20 02:17:14,661 - training_pipeline - INFO - Building model for mental_health...
+2025-11-20 02:17:18,070 - training_pipeline - INFO - Test Metrics - Loss: 0.1687, Accuracy: 0.9200, Precision: 0.6923, Recall: 0.8710, F1: 0.7714
+2025-11-20 02:17:18,101 - training_pipeline - INFO - Optimizing mental_health model with RL...
+2025-11-20 02:17:18,367 - reward_system - INFO - Optimal threshold for mental_health: 0.520 with reward: 0.8114
+2025-11-20 02:17:18,367 - training_pipeline - INFO - Optimal threshold: 0.520, Best reward: 0.8114
+2025-11-20 02:17:18,367 - reinforcement_learning - ERROR - Model for mental_health not available
+2025-11-20 02:17:18,367 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-20 02:17:18,429 - training_pipeline - INFO - Training pipeline completed for MENTAL_HEALTH
+2025-11-20 02:20:05,694 - __main__ - INFO - Directory ensured: models
+2025-11-20 02:20:05,694 - __main__ - INFO - Directory ensured: logs
+2025-11-20 02:20:05,695 - __main__ - INFO - Directory ensured: datasets
+2025-11-20 02:20:05,695 - __main__ - INFO - Directory ensured: database
+2025-11-20 02:20:05,696 - __main__ - INFO - Directory ensured: instance
+2025-11-20 02:20:05,696 - __main__ - INFO - ============================================================
+2025-11-20 02:20:05,697 - __main__ - INFO - Starting Training for All Models
+2025-11-20 02:20:05,697 - __main__ - INFO - ============================================================
+2025-11-20 02:20:11,620 - __main__ - INFO - Database initialized successfully
+2025-11-20 02:20:11,635 - __main__ - INFO - ============================================================
+2025-11-20 02:20:11,635 - __main__ - INFO - Starting Dengue Model Training
+2025-11-20 02:20:11,635 - __main__ - INFO - ============================================================
+2025-11-20 02:20:11,698 - training_pipeline - INFO - Starting training pipeline for DENGUE
+2025-11-20 02:20:11,698 - training_pipeline - INFO - Preparing dengue data...
+2025-11-20 02:20:11,698 - training_pipeline - INFO - Generating sample data for dengue...
+2025-11-20 02:20:11,776 - training_pipeline - INFO - Training supervised model for dengue...
+2025-11-20 02:20:11,776 - training_pipeline - INFO - Building model for dengue...
+2025-11-20 02:20:24,980 - training_pipeline - INFO - Test Metrics - Loss: 0.1887, Accuracy: 0.9100, Precision: 0.8730, Recall: 0.8462, F1: 0.8594
+2025-11-20 02:20:25,230 - training_pipeline - INFO - Optimizing dengue model with RL...
+2025-11-20 02:20:25,730 - reward_system - INFO - Optimal threshold for dengue: 0.320 with reward: 0.8179
+2025-11-20 02:20:25,730 - training_pipeline - INFO - Optimal threshold: 0.320, Best reward: 0.8179
+2025-11-20 02:20:25,730 - reinforcement_learning - ERROR - Model for dengue not available
+2025-11-20 02:20:25,730 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-20 02:20:25,808 - training_pipeline - INFO - Training pipeline completed for DENGUE
+2025-11-20 02:20:25,808 - __main__ - INFO - Dengue model training completed successfully
+2025-11-20 02:20:25,808 - __main__ - INFO - ============================================================
+2025-11-20 02:20:25,808 - __main__ - INFO - Starting Kidney Disease Model Training
+2025-11-20 02:20:25,808 - __main__ - INFO - ============================================================
+2025-11-20 02:20:25,808 - training_pipeline - INFO - Starting training pipeline for KIDNEY
+2025-11-20 02:20:25,824 - training_pipeline - INFO - Preparing kidney data...
+2025-11-20 02:20:25,824 - training_pipeline - INFO - Generating sample data for kidney...
+2025-11-20 02:20:25,824 - training_pipeline - INFO - Training supervised model for kidney...
+2025-11-20 02:20:25,824 - training_pipeline - INFO - Building model for kidney...
+2025-11-20 02:20:30,480 - training_pipeline - INFO - Test Metrics - Loss: 0.2578, Accuracy: 0.8850, Precision: 0.9035, Recall: 0.8957, F1: 0.8996
+2025-11-20 02:20:30,512 - training_pipeline - INFO - Optimizing kidney model with RL...
+2025-11-20 02:20:30,777 - reward_system - INFO - Optimal threshold for kidney: 0.440 with reward: 0.8051
+2025-11-20 02:20:30,777 - training_pipeline - INFO - Optimal threshold: 0.440, Best reward: 0.8051
+2025-11-20 02:20:30,777 - reinforcement_learning - ERROR - Model for kidney not available
+2025-11-20 02:20:30,777 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-20 02:20:30,855 - training_pipeline - INFO - Training pipeline completed for KIDNEY
+2025-11-20 02:20:30,855 - __main__ - INFO - Kidney disease model training completed successfully
+2025-11-20 02:20:30,855 - __main__ - INFO - ============================================================
+2025-11-20 02:20:30,855 - __main__ - INFO - Starting Mental Health Model Training
+2025-11-20 02:20:30,855 - __main__ - INFO - ============================================================
+2025-11-20 02:20:30,855 - training_pipeline - INFO - Starting training pipeline for MENTAL_HEALTH
+2025-11-20 02:20:30,855 - training_pipeline - INFO - Preparing mental_health data...
+2025-11-20 02:20:30,855 - training_pipeline - INFO - Generating sample data for mental_health...
+2025-11-20 02:20:30,871 - training_pipeline - INFO - Training supervised model for mental_health...
+2025-11-20 02:20:30,871 - training_pipeline - INFO - Building model for mental_health...
+2025-11-20 02:20:34,027 - training_pipeline - INFO - Test Metrics - Loss: 0.1383, Accuracy: 0.9300, Precision: 0.7297, Recall: 0.8710, F1: 0.7941
+2025-11-20 02:20:34,043 - training_pipeline - INFO - Optimizing mental_health model with RL...
+2025-11-20 02:20:34,309 - reward_system - INFO - Optimal threshold for mental_health: 0.420 with reward: 0.8422
+2025-11-20 02:20:34,309 - training_pipeline - INFO - Optimal threshold: 0.420, Best reward: 0.8422
+2025-11-20 02:20:34,309 - reinforcement_learning - ERROR - Model for mental_health not available
+2025-11-20 02:20:34,309 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-20 02:20:34,371 - training_pipeline - INFO - Training pipeline completed for MENTAL_HEALTH
+2025-11-20 02:20:34,371 - __main__ - INFO - Mental health model training completed successfully
+2025-11-20 02:20:34,387 - __main__ - INFO - All models trained successfully
+2025-11-20 02:20:55,484 - __main__ - INFO - Directory ensured: models
+2025-11-20 02:20:55,484 - __main__ - INFO - Directory ensured: logs
+2025-11-20 02:20:55,484 - __main__ - INFO - Directory ensured: datasets
+2025-11-20 02:20:55,484 - __main__ - INFO - Directory ensured: database
+2025-11-20 02:20:55,484 - __main__ - INFO - Directory ensured: instance
+2025-11-20 02:20:55,484 - __main__ - INFO - ============================================================
+2025-11-20 02:20:55,484 - __main__ - INFO - Starting API Server
+2025-11-20 02:20:55,484 - __main__ - INFO - ============================================================
+2025-11-20 02:20:59,715 - __main__ - INFO - Database initialized successfully
+2025-11-20 02:21:00,110 - api_endpoints - INFO - Models loaded successfully
+2025-11-20 02:21:00,118 - __main__ - INFO - Server starting on 0.0.0.0:5000
+2025-11-20 02:21:00,166 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.109:5000
+2025-11-20 02:21:00,167 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-20 02:21:07,399 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:07] "GET /api/health HTTP/1.1" 200 -
+2025-11-20 02:21:09,430 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:09] "GET /api/health HTTP/1.1" 200 -
+2025-11-20 02:21:11,479 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:11] "GET /api/model-info HTTP/1.1" 200 -
+2025-11-20 02:21:13,695 - api_endpoints - INFO - Dengue prediction made: High Risk
+2025-11-20 02:21:13,695 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:13] "POST /api/dengue/predict HTTP/1.1" 200 -
+2025-11-20 02:21:15,820 - api_endpoints - INFO - Batch dengue prediction: processed 2 records
+2025-11-20 02:21:15,820 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:15] "POST /api/dengue/batch-predict HTTP/1.1" 200 -
+2025-11-20 02:21:17,899 - api_endpoints - INFO - Dengue risk assessment completed: Critical
+2025-11-20 02:21:17,899 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:17] "POST /api/dengue/risk-assessment HTTP/1.1" 200 -
+2025-11-20 02:21:20,060 - api_endpoints - INFO - Kidney prediction made: Stage 5 (ESRD)
+2025-11-20 02:21:20,060 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:20] "POST /api/kidney/predict HTTP/1.1" 200 -
+2025-11-20 02:21:22,174 - api_endpoints - INFO - Kidney risk assessment: Stage 5 (ESRD)
+2025-11-20 02:21:22,174 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:22] "POST /api/kidney/risk-assessment HTTP/1.1" 200 -
+2025-11-20 02:21:24,299 - api_endpoints - INFO - Mental health assessment: Critical
+2025-11-20 02:21:24,299 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:24] "POST /api/mental-health/assessment HTTP/1.1" 200 -
+2025-11-20 02:21:26,409 - api_endpoints - INFO - Therapy plan generated: Critical
+2025-11-20 02:21:26,409 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:26] "POST /api/mental-health/therapy-plan HTTP/1.1" 200 -
+2025-11-20 02:21:28,491 - api_endpoints - INFO - Chatbot response generated for user test_user_123
+2025-11-20 02:21:28,491 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:28] "POST /api/mental-health/chat HTTP/1.1" 200 -
+2025-11-20 02:21:30,538 - api_endpoints - ERROR - Error in model evaluation for dengue: name 'reward_systems' is not defined
+2025-11-20 02:21:30,538 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:30] "[35m[1mPOST /api/dengue/evaluate HTTP/1.1[0m" 500 -
+2025-11-20 02:21:32,585 - api_endpoints - ERROR - Error in model evaluation for kidney: name 'reward_systems' is not defined
+2025-11-20 02:21:32,585 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:32] "[35m[1mPOST /api/kidney/evaluate HTTP/1.1[0m" 500 -
+2025-11-20 02:21:34,601 - api_endpoints - ERROR - Error in model evaluation for mental_health: name 'reward_systems' is not defined
+2025-11-20 02:21:34,601 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:34] "[35m[1mPOST /api/mental_health/evaluate HTTP/1.1[0m" 500 -
+2025-11-20 02:21:36,643 - api_endpoints - ERROR - Error in batch evaluation for dengue: name 'reward_systems' is not defined
+2025-11-20 02:21:36,643 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:36] "[35m[1mPOST /api/dengue/batch-evaluate HTTP/1.1[0m" 500 -
+2025-11-20 02:21:38,679 - api_endpoints - ERROR - Error in batch evaluation for kidney: name 'reward_systems' is not defined
+2025-11-20 02:21:38,680 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:38] "[35m[1mPOST /api/kidney/batch-evaluate HTTP/1.1[0m" 500 -
+2025-11-20 02:21:40,714 - api_endpoints - ERROR - Error in batch evaluation for mental_health: name 'reward_systems' is not defined
+2025-11-20 02:21:40,714 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 02:21:40] "[35m[1mPOST /api/mental_health/batch-evaluate HTTP/1.1[0m" 500 -
+2025-11-20 12:28:33,633 - __main__ - INFO - Directory ensured: models
+2025-11-20 12:28:33,648 - __main__ - INFO - Directory ensured: logs
+2025-11-20 12:28:33,648 - __main__ - INFO - Directory ensured: datasets
+2025-11-20 12:28:33,648 - __main__ - INFO - Directory ensured: database
+2025-11-20 12:28:33,648 - __main__ - INFO - Directory ensured: instance
+2025-11-20 12:29:55,430 - __main__ - INFO - Directory ensured: models
+2025-11-20 12:29:55,431 - __main__ - INFO - Directory ensured: logs
+2025-11-20 12:29:55,432 - __main__ - INFO - Directory ensured: datasets
+2025-11-20 12:29:55,432 - __main__ - INFO - Directory ensured: database
+2025-11-20 12:29:55,432 - __main__ - INFO - Directory ensured: instance
+2025-11-20 12:29:55,433 - __main__ - INFO - ============================================================
+2025-11-20 12:29:55,433 - __main__ - INFO - Starting API Server
+2025-11-20 12:29:55,434 - __main__ - INFO - ============================================================
+2025-11-20 12:30:45,724 - __main__ - INFO - Database initialized successfully
+2025-11-20 12:30:49,629 - api_endpoints - INFO - Models loaded successfully
+2025-11-20 12:30:49,637 - __main__ - INFO - Server starting on 0.0.0.0:5000
+2025-11-20 12:30:49,683 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.109:5000
+2025-11-20 12:30:49,685 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-20 12:40:59,119 - __main__ - INFO - Directory ensured: models
+2025-11-20 12:40:59,120 - __main__ - INFO - Directory ensured: logs
+2025-11-20 12:40:59,120 - __main__ - INFO - Directory ensured: datasets
+2025-11-20 12:40:59,121 - __main__ - INFO - Directory ensured: database
+2025-11-20 12:40:59,121 - __main__ - INFO - Directory ensured: instance
+2025-11-20 12:40:59,121 - __main__ - INFO - ============================================================
+2025-11-20 12:40:59,122 - __main__ - INFO - Starting API Server
+2025-11-20 12:40:59,122 - __main__ - INFO - ============================================================
+2025-11-20 12:41:39,085 - __main__ - INFO - Database initialized successfully
+2025-11-20 12:41:42,207 - api_endpoints - INFO - Models loaded successfully
+2025-11-20 12:41:42,215 - __main__ - INFO - Server starting on 0.0.0.0:5000
+2025-11-20 12:41:42,251 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.109:5000
+2025-11-20 12:41:42,252 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-20 12:59:53,074 - __main__ - INFO - Directory ensured: models
+2025-11-20 12:59:53,088 - __main__ - INFO - Directory ensured: logs
+2025-11-20 12:59:53,088 - __main__ - INFO - Directory ensured: datasets
+2025-11-20 12:59:53,089 - __main__ - INFO - Directory ensured: database
+2025-11-20 12:59:53,089 - __main__ - INFO - Directory ensured: instance
+2025-11-20 12:59:53,089 - __main__ - INFO - ============================================================
+2025-11-20 12:59:53,090 - __main__ - INFO - Starting Training for All Models
+2025-11-20 12:59:53,090 - __main__ - INFO - ============================================================
+2025-11-20 13:00:35,104 - __main__ - INFO - Database initialized successfully
+2025-11-20 13:00:35,104 - __main__ - INFO - ============================================================
+2025-11-20 13:00:35,104 - __main__ - INFO - Starting Dengue Model Training
+2025-11-20 13:00:35,104 - __main__ - INFO - ============================================================
+2025-11-20 13:00:35,182 - training_pipeline - INFO - Starting training pipeline for DENGUE
+2025-11-20 13:00:35,182 - training_pipeline - INFO - Preparing dengue data...
+2025-11-20 13:00:35,182 - training_pipeline - INFO - Generating sample data for dengue...
+2025-11-20 13:00:35,563 - training_pipeline - INFO - Training supervised model for dengue...
+2025-11-20 13:00:35,563 - training_pipeline - INFO - Building model for dengue...
+2025-11-20 13:00:53,464 - training_pipeline - INFO - Test Metrics - Loss: 0.1727, Accuracy: 0.9400, Precision: 0.9077, Recall: 0.9077, F1: 0.9077
+2025-11-20 13:00:53,839 - training_pipeline - INFO - Optimizing dengue model with RL...
+2025-11-20 13:00:54,480 - reward_system - INFO - Optimal threshold for dengue: 0.460 with reward: 0.8653
+2025-11-20 13:00:54,480 - training_pipeline - INFO - Optimal threshold: 0.460, Best reward: 0.8653
+2025-11-20 13:00:54,480 - reinforcement_learning - ERROR - Model for dengue not available
+2025-11-20 13:00:54,480 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-20 13:00:54,558 - training_pipeline - INFO - Training pipeline completed for DENGUE
+2025-11-20 13:00:54,573 - __main__ - INFO - Dengue model training completed successfully
+2025-11-20 13:00:54,573 - __main__ - INFO - ============================================================
+2025-11-20 13:00:54,573 - __main__ - INFO - Starting Kidney Disease Model Training
+2025-11-20 13:00:54,573 - __main__ - INFO - ============================================================
+2025-11-20 13:00:54,573 - training_pipeline - INFO - Starting training pipeline for KIDNEY
+2025-11-20 13:00:54,573 - training_pipeline - INFO - Preparing kidney data...
+2025-11-20 13:00:54,573 - training_pipeline - INFO - Generating sample data for kidney...
+2025-11-20 13:00:54,605 - training_pipeline - INFO - Training supervised model for kidney...
+2025-11-20 13:00:54,605 - training_pipeline - INFO - Building model for kidney...
+2025-11-20 13:00:57,917 - training_pipeline - INFO - Test Metrics - Loss: 0.2675, Accuracy: 0.8900, Precision: 0.9266, Recall: 0.8783, F1: 0.9018
+2025-11-20 13:00:57,949 - training_pipeline - INFO - Optimizing kidney model with RL...
+2025-11-20 13:00:58,230 - reward_system - INFO - Optimal threshold for kidney: 0.400 with reward: 0.7668
+2025-11-20 13:00:58,230 - training_pipeline - INFO - Optimal threshold: 0.400, Best reward: 0.7668
+2025-11-20 13:00:58,230 - reinforcement_learning - ERROR - Model for kidney not available
+2025-11-20 13:00:58,230 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-20 13:00:58,324 - training_pipeline - INFO - Training pipeline completed for KIDNEY
+2025-11-20 13:00:58,324 - __main__ - INFO - Kidney disease model training completed successfully
+2025-11-20 13:00:58,324 - __main__ - INFO - ============================================================
+2025-11-20 13:00:58,324 - __main__ - INFO - Starting Mental Health Model Training
+2025-11-20 13:00:58,324 - __main__ - INFO - ============================================================
+2025-11-20 13:00:58,324 - training_pipeline - INFO - Starting training pipeline for MENTAL_HEALTH
+2025-11-20 13:00:58,339 - training_pipeline - INFO - Preparing mental_health data...
+2025-11-20 13:00:58,339 - training_pipeline - INFO - Generating sample data for mental_health...
+2025-11-20 13:00:58,339 - training_pipeline - INFO - Training supervised model for mental_health...
+2025-11-20 13:00:58,339 - training_pipeline - INFO - Building model for mental_health...
+2025-11-20 13:01:01,423 - training_pipeline - INFO - Test Metrics - Loss: 0.1555, Accuracy: 0.9250, Precision: 0.7222, Recall: 0.8387, F1: 0.7761
+2025-11-20 13:01:01,439 - training_pipeline - INFO - Optimizing mental_health model with RL...
+2025-11-20 13:01:01,705 - reward_system - INFO - Optimal threshold for mental_health: 0.420 with reward: 0.8032
+2025-11-20 13:01:01,705 - training_pipeline - INFO - Optimal threshold: 0.420, Best reward: 0.8032
+2025-11-20 13:01:01,705 - reinforcement_learning - ERROR - Model for mental_health not available
+2025-11-20 13:01:01,705 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-20 13:01:01,783 - training_pipeline - INFO - Training pipeline completed for MENTAL_HEALTH
+2025-11-20 13:01:01,783 - __main__ - INFO - Mental health model training completed successfully
+2025-11-20 13:01:01,783 - __main__ - INFO - All models trained successfully
+2025-11-20 13:01:26,231 - __main__ - INFO - Directory ensured: models
+2025-11-20 13:01:26,231 - __main__ - INFO - Directory ensured: logs
+2025-11-20 13:01:26,231 - __main__ - INFO - Directory ensured: datasets
+2025-11-20 13:01:26,231 - __main__ - INFO - Directory ensured: database
+2025-11-20 13:01:26,231 - __main__ - INFO - Directory ensured: instance
+2025-11-20 13:01:26,231 - __main__ - INFO - ============================================================
+2025-11-20 13:01:26,231 - __main__ - INFO - Starting API Server
+2025-11-20 13:01:26,231 - __main__ - INFO - ============================================================
+2025-11-20 13:01:39,703 - __main__ - INFO - Database initialized successfully
+2025-11-20 13:01:40,219 - api_endpoints - INFO - Models loaded successfully
+2025-11-20 13:01:40,219 - __main__ - INFO - Server starting on 0.0.0.0:5000
+2025-11-20 13:01:40,266 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.109:5000
+2025-11-20 13:01:40,282 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-20 13:06:17,519 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 13:06:17] "OPTIONS /api/dengue/predict HTTP/1.1" 200 -
+2025-11-20 13:06:17,652 - api_endpoints - WARNING - Missing feature Age in input, using default value 0.0
+2025-11-20 13:06:17,652 - api_endpoints - WARNING - Missing feature Gender in input, using default value 0.0
+2025-11-20 13:06:17,652 - api_endpoints - WARNING - Missing feature NS1 in input, using default value 0.0
+2025-11-20 13:06:17,668 - api_endpoints - WARNING - Missing feature IgG in input, using default value 0.0
+2025-11-20 13:06:17,668 - api_endpoints - WARNING - Missing feature IgM in input, using default value 0.0
+2025-11-20 13:06:17,668 - api_endpoints - WARNING - Missing feature Area in input, using default value 0.0
+2025-11-20 13:06:17,668 - api_endpoints - WARNING - Missing feature AreaType in input, using default value 0.0
+2025-11-20 13:06:17,668 - api_endpoints - WARNING - Missing feature HouseType in input, using default value 0.0
+2025-11-20 13:06:17,668 - api_endpoints - WARNING - Missing feature District_encoded in input, using default value 0.0
+2025-11-20 13:06:17,668 - api_endpoints - WARNING - Missing feature Temperature in input, using default value 0.0
+2025-11-20 13:06:17,668 - api_endpoints - WARNING - Missing feature Symptoms in input, using default value 0.0
+2025-11-20 13:06:17,668 - api_endpoints - WARNING - Missing feature Platelet_Count in input, using default value 0.0
+2025-11-20 13:06:17,668 - api_endpoints - WARNING - Missing feature WBC_Count in input, using default value 0.0
+2025-11-20 13:06:24,103 - api_endpoints - INFO - Dengue prediction made: Low Risk
+2025-11-20 13:06:24,103 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 13:06:24] "POST /api/dengue/predict HTTP/1.1" 200 -
+2025-11-20 13:06:30,999 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 13:06:30] "OPTIONS /api/dengue/predict HTTP/1.1" 200 -
+2025-11-20 13:06:31,249 - api_endpoints - WARNING - Missing feature Age in input, using default value 0.0
+2025-11-20 13:06:31,249 - api_endpoints - WARNING - Missing feature Gender in input, using default value 0.0
+2025-11-20 13:06:31,249 - api_endpoints - WARNING - Missing feature NS1 in input, using default value 0.0
+2025-11-20 13:06:31,249 - api_endpoints - WARNING - Missing feature IgG in input, using default value 0.0
+2025-11-20 13:06:31,249 - api_endpoints - WARNING - Missing feature IgM in input, using default value 0.0
+2025-11-20 13:06:31,249 - api_endpoints - WARNING - Missing feature Area in input, using default value 0.0
+2025-11-20 13:06:31,249 - api_endpoints - WARNING - Missing feature AreaType in input, using default value 0.0
+2025-11-20 13:06:31,249 - api_endpoints - WARNING - Missing feature HouseType in input, using default value 0.0
+2025-11-20 13:06:31,249 - api_endpoints - WARNING - Missing feature District_encoded in input, using default value 0.0
+2025-11-20 13:06:31,249 - api_endpoints - WARNING - Missing feature Temperature in input, using default value 0.0
+2025-11-20 13:06:31,249 - api_endpoints - WARNING - Missing feature Symptoms in input, using default value 0.0
+2025-11-20 13:06:31,249 - api_endpoints - WARNING - Missing feature Platelet_Count in input, using default value 0.0
+2025-11-20 13:06:31,249 - api_endpoints - WARNING - Missing feature WBC_Count in input, using default value 0.0
+2025-11-20 13:06:31,311 - api_endpoints - INFO - Dengue prediction made: Low Risk
+2025-11-20 13:06:31,311 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 13:06:31] "POST /api/dengue/predict HTTP/1.1" 200 -
+2025-11-20 13:06:38,190 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 13:06:38] "OPTIONS /api/dengue/predict HTTP/1.1" 200 -
+2025-11-20 13:06:38,507 - api_endpoints - WARNING - Missing feature Age in input, using default value 0.0
+2025-11-20 13:06:38,507 - api_endpoints - WARNING - Missing feature Gender in input, using default value 0.0
+2025-11-20 13:06:38,507 - api_endpoints - WARNING - Missing feature NS1 in input, using default value 0.0
+2025-11-20 13:06:38,507 - api_endpoints - WARNING - Missing feature IgG in input, using default value 0.0
+2025-11-20 13:06:38,507 - api_endpoints - WARNING - Missing feature IgM in input, using default value 0.0
+2025-11-20 13:06:38,507 - api_endpoints - WARNING - Missing feature Area in input, using default value 0.0
+2025-11-20 13:06:38,507 - api_endpoints - WARNING - Missing feature AreaType in input, using default value 0.0
+2025-11-20 13:06:38,507 - api_endpoints - WARNING - Missing feature HouseType in input, using default value 0.0
+2025-11-20 13:06:38,507 - api_endpoints - WARNING - Missing feature District_encoded in input, using default value 0.0
+2025-11-20 13:06:38,507 - api_endpoints - WARNING - Missing feature Temperature in input, using default value 0.0
+2025-11-20 13:06:38,507 - api_endpoints - WARNING - Missing feature Symptoms in input, using default value 0.0
+2025-11-20 13:06:38,507 - api_endpoints - WARNING - Missing feature Platelet_Count in input, using default value 0.0
+2025-11-20 13:06:38,507 - api_endpoints - WARNING - Missing feature WBC_Count in input, using default value 0.0
+2025-11-20 13:06:38,573 - api_endpoints - INFO - Dengue prediction made: Low Risk
+2025-11-20 13:06:38,573 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 13:06:38] "POST /api/dengue/predict HTTP/1.1" 200 -
+2025-11-20 13:12:27,119 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 13:12:27] "OPTIONS /api/dengue/predict HTTP/1.1" 200 -
+2025-11-20 13:12:27,571 - api_endpoints - WARNING - Missing feature Age in input, using default value 0.0
+2025-11-20 13:12:27,571 - api_endpoints - WARNING - Missing feature Gender in input, using default value 0.0
+2025-11-20 13:12:27,587 - api_endpoints - WARNING - Missing feature NS1 in input, using default value 0.0
+2025-11-20 13:12:27,587 - api_endpoints - WARNING - Missing feature IgG in input, using default value 0.0
+2025-11-20 13:12:27,587 - api_endpoints - WARNING - Missing feature IgM in input, using default value 0.0
+2025-11-20 13:12:27,587 - api_endpoints - WARNING - Missing feature Area in input, using default value 0.0
+2025-11-20 13:12:27,587 - api_endpoints - WARNING - Missing feature AreaType in input, using default value 0.0
+2025-11-20 13:12:27,587 - api_endpoints - WARNING - Missing feature HouseType in input, using default value 0.0
+2025-11-20 13:12:27,587 - api_endpoints - WARNING - Missing feature District_encoded in input, using default value 0.0
+2025-11-20 13:12:27,587 - api_endpoints - WARNING - Missing feature Temperature in input, using default value 0.0
+2025-11-20 13:12:27,587 - api_endpoints - WARNING - Missing feature Symptoms in input, using default value 0.0
+2025-11-20 13:12:27,587 - api_endpoints - WARNING - Missing feature Platelet_Count in input, using default value 0.0
+2025-11-20 13:12:27,587 - api_endpoints - WARNING - Missing feature WBC_Count in input, using default value 0.0
+2025-11-20 13:12:35,031 - api_endpoints - INFO - Dengue prediction made: Low Risk
+2025-11-20 13:12:35,031 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 13:12:35] "POST /api/dengue/predict HTTP/1.1" 200 -
+2025-11-20 13:17:31,591 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 13:17:31] "OPTIONS /api/mental-health/assessment HTTP/1.1" 200 -
+2025-11-20 13:17:31,607 - api_endpoints - WARNING - Missing feature age in input, using default value 0.0
+2025-11-20 13:17:31,607 - api_endpoints - WARNING - Missing feature gender in input, using default value 0.0
+2025-11-20 13:17:31,607 - api_endpoints - WARNING - Missing feature employment in input, using default value 0.0
+2025-11-20 13:17:31,607 - api_endpoints - WARNING - Missing feature work_env in input, using default value 0.0
+2025-11-20 13:17:31,607 - api_endpoints - WARNING - Missing feature stress in input, using default value 0.0
+2025-11-20 13:17:31,607 - api_endpoints - WARNING - Missing feature sleep in input, using default value 0.0
+2025-11-20 13:17:31,607 - api_endpoints - WARNING - Missing feature activity in input, using default value 0.0
+2025-11-20 13:17:31,607 - api_endpoints - WARNING - Missing feature depression in input, using default value 0.0
+2025-11-20 13:17:31,607 - api_endpoints - WARNING - Missing feature anxiety in input, using default value 0.0
+2025-11-20 13:17:31,607 - api_endpoints - WARNING - Missing feature support in input, using default value 0.0
+2025-11-20 13:17:31,607 - api_endpoints - WARNING - Missing feature productivity in input, using default value 0.0
+2025-11-20 13:17:31,607 - api_endpoints - WARNING - Missing feature mh_history in input, using default value 0.0
+2025-11-20 13:17:31,607 - api_endpoints - WARNING - Missing feature treatment in input, using default value 0.0
+2025-11-20 13:17:38,052 - api_endpoints - INFO - Mental health assessment: Mild
+2025-11-20 13:17:38,055 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 13:17:38] "POST /api/mental-health/assessment HTTP/1.1" 200 -

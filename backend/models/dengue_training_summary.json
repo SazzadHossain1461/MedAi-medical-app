@@ -1,0 +1,33 @@
+{
+  "disease_type": "dengue",
+  "optimal_threshold": 0.46000000000000013,
+  "test_metrics": {
+    "optimal_threshold": 0.46000000000000013,
+    "accuracy": 0.945,
+    "precision": 0.9090909090909091,
+    "recall": 0.9230769230769231,
+    "f1_score": 0.9160305343511451,
+    "default_accuracy": 0.94,
+    "improvement": 0.0050000000000000044,
+    "disease_type": "dengue"
+  },
+  "features_used": [
+    "Age",
+    "Gender",
+    "NS1",
+    "IgG",
+    "IgM",
+    "Area",
+    "AreaType",
+    "HouseType",
+    "District_encoded",
+    "Temperature",
+    "Symptoms",
+    "Platelet_Count",
+    "WBC_Count"
+  ],
+  "model_architecture": "Sequential_64_32_16_1",
+  "training_samples": 600,
+  "validation_samples": 200,
+  "test_samples": 200
+}

@@ -1,0 +1,206 @@
+2025-11-19 16:20:39,645 - __main__ - INFO - Directory ensured: models
+2025-11-19 16:20:39,645 - __main__ - INFO - Directory ensured: logs
+2025-11-19 16:20:39,645 - __main__ - INFO - Directory ensured: datasets
+2025-11-19 16:20:39,661 - __main__ - INFO - Directory ensured: database
+2025-11-19 16:20:39,661 - __main__ - INFO - ============================================================
+2025-11-19 16:20:39,661 - __main__ - INFO - Starting Training for All Models
+2025-11-19 16:20:39,661 - __main__ - INFO - ============================================================
+2025-11-19 16:20:39,661 - __main__ - INFO - ============================================================
+2025-11-19 16:20:39,661 - __main__ - INFO - Starting Dengue Model Training
+2025-11-19 16:20:39,661 - __main__ - INFO - ============================================================
+2025-11-19 16:20:39,661 - training_pipeline - INFO - Starting training pipeline for DENGUE
+2025-11-19 16:20:39,661 - training_pipeline - INFO - Preparing dengue data...
+2025-11-19 16:20:39,678 - data_preprocessing - ERROR - Error loading data: [Errno 2] No such file or directory: 'datasets/dengue_data.csv'
+2025-11-19 16:20:39,678 - __main__ - ERROR - Error training models: object of type 'NoneType' has no len()
+2025-11-19 16:21:50,198 - __main__ - INFO - Directory ensured: models
+2025-11-19 16:21:50,198 - __main__ - INFO - Directory ensured: logs
+2025-11-19 16:21:50,198 - __main__ - INFO - Directory ensured: datasets
+2025-11-19 16:21:50,198 - __main__ - INFO - Directory ensured: database
+2025-11-19 16:21:50,198 - __main__ - INFO - ============================================================
+2025-11-19 16:21:50,198 - __main__ - INFO - Starting API Server
+2025-11-19 16:21:50,198 - __main__ - INFO - ============================================================
+2025-11-19 16:21:50,198 - __main__ - INFO - Server will run on 0.0.0.0:5000
+2025-11-19 16:21:50,267 - api_endpoints - ERROR - Error loading models: (sqlite3.OperationalError) unable to open database file
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-19 16:21:50,267 - __main__ - ERROR - Failed to load models. Server not started.
+2025-11-19 16:27:58,504 - __main__ - INFO - Directory ensured: models
+2025-11-19 16:27:58,520 - __main__ - INFO - Directory ensured: logs
+2025-11-19 16:27:58,520 - __main__ - INFO - Directory ensured: datasets
+2025-11-19 16:27:58,520 - __main__ - INFO - Directory ensured: database
+2025-11-19 16:27:58,520 - __main__ - INFO - ============================================================
+2025-11-19 16:27:58,520 - __main__ - INFO - Starting API Server
+2025-11-19 16:27:58,520 - __main__ - INFO - ============================================================
+2025-11-19 16:27:58,520 - __main__ - INFO - Server will run on 0.0.0.0:5000
+2025-11-19 16:27:58,520 - api_endpoints - INFO - Loading machine learning models...
+2025-11-19 16:27:58,520 - api_endpoints - INFO - Initializing database...
+2025-11-19 16:27:59,332 - api_endpoints - WARNING - Dengue model not found at: models/dengue_model.h5
+2025-11-19 16:27:59,332 - api_endpoints - WARNING - Kidney model not found at: models/kidney_model.h5
+2025-11-19 16:27:59,332 - api_endpoints - WARNING - Mental health model not found at: models/mental_health_model.h5
+2025-11-19 16:27:59,332 - api_endpoints - ERROR - No models were loaded. Please train models first.
+2025-11-19 16:27:59,332 - __main__ - ERROR - Failed to load models. Server not started.
+2025-11-19 16:30:43,711 - __main__ - INFO - Directory ensured: models
+2025-11-19 16:30:43,721 - __main__ - INFO - Directory ensured: logs
+2025-11-19 16:30:43,721 - __main__ - INFO - Directory ensured: datasets
+2025-11-19 16:30:43,721 - __main__ - INFO - Directory ensured: database
+2025-11-19 16:30:43,721 - __main__ - INFO - ============================================================
+2025-11-19 16:30:43,722 - __main__ - INFO - Starting Training for All Models
+2025-11-19 16:30:43,722 - __main__ - INFO - ============================================================
+2025-11-19 16:30:43,722 - __main__ - INFO - ============================================================
+2025-11-19 16:30:43,722 - __main__ - INFO - Starting Dengue Model Training
+2025-11-19 16:30:43,722 - __main__ - INFO - ============================================================
+2025-11-19 16:30:43,722 - training_pipeline - INFO - Starting training pipeline for DENGUE
+2025-11-19 16:30:43,723 - training_pipeline - INFO - Preparing dengue data...
+2025-11-19 16:30:43,723 - data_preprocessing - ERROR - Error loading data: [Errno 2] No such file or directory: 'datasets/dengue_data.csv'
+2025-11-19 16:30:43,723 - __main__ - ERROR - Error training models: object of type 'NoneType' has no len()
+2025-11-19 16:31:11,379 - __main__ - INFO - Directory ensured: models
+2025-11-19 16:31:11,379 - __main__ - INFO - Directory ensured: logs
+2025-11-19 16:31:11,379 - __main__ - INFO - Directory ensured: datasets
+2025-11-19 16:31:11,379 - __main__ - INFO - Directory ensured: database
+2025-11-19 16:31:11,379 - __main__ - INFO - ============================================================
+2025-11-19 16:31:11,379 - __main__ - INFO - Starting API Server
+2025-11-19 16:31:11,379 - __main__ - INFO - ============================================================
+2025-11-19 16:31:11,379 - __main__ - INFO - Server will run on 0.0.0.0:5000
+2025-11-19 16:31:11,458 - api_endpoints - ERROR - Error loading models: (sqlite3.OperationalError) unable to open database file
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-19 16:31:11,473 - __main__ - ERROR - Failed to load models. Server not started.
+2025-11-19 16:33:09,068 - __main__ - INFO - Directory ensured: models
+2025-11-19 16:33:09,068 - __main__ - INFO - Directory ensured: logs
+2025-11-19 16:33:09,068 - __main__ - INFO - Directory ensured: datasets
+2025-11-19 16:33:09,068 - __main__ - INFO - Directory ensured: database
+2025-11-19 16:33:09,068 - __main__ - INFO - ============================================================
+2025-11-19 16:33:09,068 - __main__ - INFO - Starting Dengue Model Training
+2025-11-19 16:33:09,068 - __main__ - INFO - ============================================================
+2025-11-19 16:33:09,068 - training_pipeline - INFO - Starting training pipeline for DENGUE
+2025-11-19 16:33:09,068 - training_pipeline - INFO - Preparing dengue data...
+2025-11-19 16:33:09,083 - data_preprocessing - ERROR - Error loading data: [Errno 2] No such file or directory: 'datasets/dengue_data.csv'
+2025-11-19 16:33:09,083 - __main__ - ERROR - Error: object of type 'NoneType' has no len()
+2025-11-19 16:34:14,337 - __main__ - INFO - Directory ensured: models
+2025-11-19 16:34:14,337 - __main__ - INFO - Directory ensured: logs
+2025-11-19 16:34:14,338 - __main__ - INFO - Directory ensured: datasets
+2025-11-19 16:34:14,339 - __main__ - INFO - Directory ensured: database
+2025-11-19 16:34:14,339 - __main__ - INFO - ============================================================
+2025-11-19 16:34:14,339 - __main__ - INFO - Starting Dengue Model Training
+2025-11-19 16:34:14,340 - __main__ - INFO - ============================================================
+2025-11-19 16:34:14,340 - training_pipeline - INFO - Starting training pipeline for DENGUE
+2025-11-19 16:34:14,342 - training_pipeline - INFO - Preparing dengue data...
+2025-11-19 16:34:14,473 - data_preprocessing - INFO - Data loaded successfully. Shape: (1000, 10)
+2025-11-19 16:34:14,599 - __main__ - ERROR - Error: "['dengue_risk'] not found in axis"
+2025-11-19 16:34:51,114 - __main__ - INFO - Directory ensured: models
+2025-11-19 16:34:51,114 - __main__ - INFO - Directory ensured: logs
+2025-11-19 16:34:51,114 - __main__ - INFO - Directory ensured: datasets
+2025-11-19 16:34:51,114 - __main__ - INFO - Directory ensured: database
+2025-11-19 16:34:51,114 - __main__ - INFO - ============================================================
+2025-11-19 16:34:51,114 - __main__ - INFO - Starting Training for All Models
+2025-11-19 16:34:51,114 - __main__ - INFO - ============================================================
+2025-11-19 16:34:51,114 - __main__ - INFO - ============================================================
+2025-11-19 16:34:51,114 - __main__ - INFO - Starting Dengue Model Training
+2025-11-19 16:34:51,114 - __main__ - INFO - ============================================================
+2025-11-19 16:34:51,114 - training_pipeline - INFO - Starting training pipeline for DENGUE
+2025-11-19 16:34:51,114 - training_pipeline - INFO - Preparing dengue data...
+2025-11-19 16:34:51,129 - data_preprocessing - INFO - Data loaded successfully. Shape: (1000, 10)
+2025-11-19 16:34:51,129 - __main__ - ERROR - Error training models: "['dengue_risk'] not found in axis"
+2025-11-19 16:45:10,723 - __main__ - INFO - Directory ensured: models
+2025-11-19 16:45:10,723 - __main__ - INFO - Directory ensured: logs
+2025-11-19 16:45:10,723 - __main__ - INFO - Directory ensured: datasets
+2025-11-19 16:45:10,723 - __main__ - INFO - Directory ensured: database
+2025-11-19 16:45:10,723 - __main__ - INFO - ============================================================
+2025-11-19 16:45:10,723 - __main__ - INFO - Starting Training for All Models
+2025-11-19 16:45:10,723 - __main__ - INFO - ============================================================
+2025-11-19 16:45:10,723 - __main__ - INFO - ============================================================
+2025-11-19 16:45:10,723 - __main__ - INFO - Starting Dengue Model Training
+2025-11-19 16:45:10,723 - __main__ - INFO - ============================================================
+2025-11-19 16:45:10,723 - training_pipeline - INFO - Starting training pipeline for DENGUE
+2025-11-19 16:45:10,723 - training_pipeline - INFO - Preparing dengue data...
+2025-11-19 16:45:10,848 - data_preprocessing - INFO - Data loaded successfully. Shape: (1000, 10)
+2025-11-19 16:45:11,036 - data_preprocessing - INFO - Scaler saved to models\dengue_scaler.pkl
+2025-11-19 16:45:11,051 - training_pipeline - INFO - Training supervised model for dengue...
+2025-11-19 16:45:14,498 - model_architecture - INFO - Attention network created for dengue
+2025-11-19 16:45:14,528 - model_architecture - INFO - Model compiled with learning rate: 0.001
+2025-11-19 16:45:14,528 - model_architecture - INFO - Starting training for 100 epochs
+2025-11-19 16:45:16,474 - __main__ - ERROR - Error training models: in user code:
+
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1377, in train_function  *
+        return step_function(self, iterator)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1360, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1349, in run_step  **
+        outputs = model.train_step(data)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1126, in train_step
+        y_pred = self(x, training=True)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\utils\traceback_utils.py", line 70, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\input_spec.py", line 298, in assert_input_compatibility
+        raise ValueError(
+
+    ValueError: Input 0 of layer "model" is incompatible with the layer: expected shape=(None, 13), found shape=(32, 9)
+
+2025-11-19 16:53:08,825 - __main__ - INFO - Directory ensured: models
+2025-11-19 16:53:08,826 - __main__ - INFO - Directory ensured: logs
+2025-11-19 16:53:08,827 - __main__ - INFO - Directory ensured: datasets
+2025-11-19 16:53:08,827 - __main__ - INFO - Directory ensured: database
+2025-11-19 16:53:08,827 - __main__ - INFO - ============================================================
+2025-11-19 16:53:08,827 - __main__ - INFO - Starting Training for All Models
+2025-11-19 16:53:08,828 - __main__ - INFO - ============================================================
+2025-11-19 16:53:08,828 - __main__ - INFO - ============================================================
+2025-11-19 16:53:08,828 - __main__ - INFO - Starting Dengue Model Training
+2025-11-19 16:53:08,828 - __main__ - INFO - ============================================================
+2025-11-19 16:53:08,828 - training_pipeline - INFO - Starting training pipeline for DENGUE
+2025-11-19 16:53:08,830 - training_pipeline - INFO - Preparing dengue data...
+2025-11-19 16:53:08,961 - data_preprocessing - INFO - Data loaded successfully. Shape: (1000, 10)
+2025-11-19 16:53:09,292 - data_preprocessing - INFO - Scaler saved to models\dengue_scaler.pkl
+2025-11-19 16:53:09,294 - training_pipeline - INFO - Training supervised model for dengue...
+2025-11-19 16:53:11,705 - model_architecture - INFO - Attention network created for dengue
+2025-11-19 16:53:11,730 - model_architecture - INFO - Model compiled with learning rate: 0.001
+2025-11-19 16:53:11,731 - model_architecture - INFO - Starting training for 100 epochs
+2025-11-19 16:53:14,104 - __main__ - ERROR - Error training models: in user code:
+
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1377, in train_function  *
+        return step_function(self, iterator)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1360, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1349, in run_step  **
+        outputs = model.train_step(data)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1126, in train_step
+        y_pred = self(x, training=True)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\utils\traceback_utils.py", line 70, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\input_spec.py", line 298, in assert_input_compatibility
+        raise ValueError(
+
+    ValueError: Input 0 of layer "model" is incompatible with the layer: expected shape=(None, 13), found shape=(32, 9)
+
+2025-11-19 16:59:49,257 - __main__ - INFO - Directory ensured: models
+2025-11-19 16:59:49,258 - __main__ - INFO - Directory ensured: logs
+2025-11-19 16:59:49,258 - __main__ - INFO - Directory ensured: datasets
+2025-11-19 16:59:49,258 - __main__ - INFO - Directory ensured: database
+2025-11-19 16:59:49,258 - __main__ - INFO - ============================================================
+2025-11-19 16:59:49,259 - __main__ - INFO - Starting Training for All Models
+2025-11-19 16:59:49,259 - __main__ - INFO - ============================================================
+2025-11-19 16:59:49,259 - __main__ - INFO - ============================================================
+2025-11-19 16:59:49,259 - __main__ - INFO - Starting Dengue Model Training
+2025-11-19 16:59:49,260 - __main__ - INFO - ============================================================
+2025-11-19 16:59:49,260 - training_pipeline - INFO - Starting training pipeline for DENGUE
+2025-11-19 16:59:49,262 - training_pipeline - INFO - Preparing dengue data...
+2025-11-19 16:59:49,386 - data_preprocessing - INFO - Data loaded successfully. Shape: (1000, 10)
+2025-11-19 16:59:49,568 - data_preprocessing - INFO - Scaler saved to models\dengue_scaler.pkl
+2025-11-19 16:59:49,571 - training_pipeline - INFO - Training supervised model for dengue...
+2025-11-19 16:59:52,009 - model_architecture - INFO - Attention network created for dengue
+2025-11-19 16:59:52,032 - model_architecture - INFO - Model compiled with learning rate: 0.001
+2025-11-19 16:59:52,033 - model_architecture - INFO - Starting training for 100 epochs
+2025-11-19 16:59:54,327 - __main__ - ERROR - Error training models: in user code:
+
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1377, in train_function  *
+        return step_function(self, iterator)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1360, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1349, in run_step  **
+        outputs = model.train_step(data)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\training.py", line 1126, in train_step
+        y_pred = self(x, training=True)
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\utils\traceback_utils.py", line 70, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File "F:\My_Projects\MedAi-app\env\lib\site-packages\keras\src\engine\input_spec.py", line 298, in assert_input_compatibility
+        raise ValueError(
+
+    ValueError: Input 0 of layer "model" is incompatible with the layer: expected shape=(None, 13), found shape=(32, 9)
+
