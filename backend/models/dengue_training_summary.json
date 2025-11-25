@@ -1,14 +1,14 @@
 {
   "disease_type": "dengue",
-  "optimal_threshold": 0.46000000000000013,
+  "optimal_threshold": 0.3,
   "test_metrics": {
-    "optimal_threshold": 0.46000000000000013,
-    "accuracy": 0.945,
-    "precision": 0.9090909090909091,
-    "recall": 0.9230769230769231,
-    "f1_score": 0.9160305343511451,
-    "default_accuracy": 0.94,
-    "improvement": 0.0050000000000000044,
+    "optimal_threshold": 0.3,
+    "accuracy": 0.935,
+    "precision": 0.8939393939393939,
+    "recall": 0.9076923076923077,
+    "f1_score": 0.900763358778626,
+    "default_accuracy": 0.925,
+    "improvement": 0.010000000000000009,
     "disease_type": "dengue"
   },
   "features_used": [

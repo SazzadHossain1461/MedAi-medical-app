@@ -5,20 +5,27 @@ import { useStore } from '../store/store';
 import { kidneyAPI } from '../api/api';
 import { toast } from 'react-toastify';
 import { MoleculeAnimation } from './3D/MoleculeAnimation';
+import { SelectDropdown } from './SelectDropdown';
 
 export const KidneyPrediction = () => {
   const { t } = useTranslation();
-  const { setLoading, loading, setKidneyResult, kidneyResult } = useStore();
+  const { setLoading, loading, user } = useStore();
+  const [result, setResult] = useState(null);
 
   const [formData, setFormData] = useState({
-    age: '',
-    systolicBP: '',
-    diastolicBP: '',
-    glucose: '',
-    potassium: '',
-    creatinine: '',
-    bmi: '',
-    smokingStatus: 'no'
+    age: '45',
+    bp: '140',
+    sg: '1.020',
+    al: '0',
+    su: '0',
+    bgr: '120',
+    bu: '25',
+    sc: '1.2',
+    sod: '138',
+    pot: '5.2',
+    hemo: '10.5',
+    pcv: '35',
+    wc: '8000'
   });
 
   const handleInputChange = (e) => {
@@ -29,32 +36,73 @@ export const KidneyPrediction = () => {
     }));
   };
 
+  const savePredictionToHistory = (prediction) => {
+    try {
+      const userId = user?.id || 'anonymous';
+      const key = `predictionHistory_${userId}`;
+      const history = JSON.parse(localStorage.getItem(key) || '[]');
+      
+      const newPrediction = {
+        id: Math.random().toString(36).substr(2, 9),
+        disease: 'kidney',
+        timestamp: new Date().toISOString(),
+        riskScore: prediction.probability || 0,
+        prediction: prediction.prediction,
+        details: formData
+      };
+      
+      history.push(newPrediction);
+      localStorage.setItem(key, JSON.stringify(history));
+    } catch (error) {
+      console.error('Error saving prediction:', error);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Validate required fields
-    if (!formData.age || !formData.creatinine || !formData.systolicBP || !formData.diastolicBP) {
-      toast.error(t('common.error'));
+    if (!formData.age || !formData.sc || !formData.bp) {
+      toast.error('Please fill all required fields');
       return;
     }
 
-    // Validate numeric values
-    const numFields = ['age', 'systolicBP', 'diastolicBP', 'glucose', 'potassium', 'creatinine', 'bmi'];
-    for (const field of numFields) {
-      if (formData[field] && isNaN(formData[field])) {
-        toast.error(`Invalid ${field}`);
-        return;
-      }
-    }
-
+    setResult(null);
     setLoading(true);
+    
     try {
-      const response = await kidneyAPI.predict(formData);
-      setKidneyResult(response.data);
-      toast.success(t('common.success'));
+      const numericFormData = {
+        age: parseFloat(formData.age),
+        bp: parseFloat(formData.bp),
+        sg: parseFloat(formData.sg),
+        al: parseFloat(formData.al),
+        su: parseFloat(formData.su),
+        bgr: parseFloat(formData.bgr),
+        bu: parseFloat(formData.bu),
+        sc: parseFloat(formData.sc),
+        sod: parseFloat(formData.sod),
+        pot: parseFloat(formData.pot),
+        hemo: parseFloat(formData.hemo),
+        pcv: parseFloat(formData.pcv),
+        wc: parseFloat(formData.wc)
+      };
+
+      console.log('Sending kidney data:', numericFormData);
+      
+      const response = await kidneyAPI.predict(numericFormData);
+      console.log('Kidney Response:', response.data);
+      
+      const newResult = {
+        prediction: response.data.prediction || 0,
+        probability: response.data.probability || response.data.confidence || 0.5,
+        disease_status: response.data.disease_status || 'Unknown'
+      };
+      
+      setResult(newResult);
+      savePredictionToHistory(newResult);
+      toast.success('Prediction successful!');
     } catch (error) {
-      toast.error('Prediction failed. Please try again.');
-      console.error(error);
+      console.error('Prediction error:', error);
+      toast.error(error.response?.data?.error || 'Prediction failed. Please check your inputs.');
     } finally {
       setLoading(false);
     }
@@ -67,157 +115,264 @@ export const KidneyPrediction = () => {
   };
 
   const getRiskLabel = (risk) => {
-    if (risk > 0.7) return t('common.highRisk');
-    if (risk > 0.4) return t('common.mediumRisk');
-    return t('common.lowRisk');
+    if (risk > 0.7) return 'High Risk';
+    if (risk > 0.4) return 'Medium Risk';
+    return 'Low Risk';
+  };
+
+  const getCKDStage = (risk) => {
+    if (risk > 0.9) return 'Stage 5 (ESRD)';
+    if (risk > 0.7) return 'Stage 4 (Severe CKD)';
+    if (risk > 0.5) return 'Stage 3b (Moderate CKD)';
+    if (risk > 0.3) return 'Stage 3a (Mild-Moderate CKD)';
+    return 'Stage 1-2 (Normal/Mild)';
   };
 
   return (
     <div className="pt-24 min-h-screen bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 pb-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center text-white mb-12"
         >
-          <h1 className="text-5xl font-bold mb-4">{t('kidney.title')}</h1>
-          <p className="text-xl text-blue-100">{t('kidney.description')}</p>
+          <h1 className="text-5xl font-bold mb-4">Kidney Disease Prediction</h1>
+          <p className="text-xl text-blue-100">Evaluate your kidney health based on medical tests</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20"
+            style={{ maxHeight: '800px', overflowY: 'auto' }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="space-y-5">
+              {/* Demographics */}
+              <div className="border-b border-white/20 pb-4">
+                <h3 className="text-white font-bold mb-4">👤 Demographics</h3>
                 <div>
-                  <label className="block text-white font-semibold mb-2">
-                    {t('kidney.labels.age')}
-                  </label>
+                  <label className="block text-white font-semibold mb-2">Age (years) *</label>
                   <input
                     type="number"
                     name="age"
                     value={formData.age}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
-                    placeholder="e.g. 45"
                     min="0"
-                    max="150"
+                    max="120"
+                    className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
+                    placeholder="45"
                   />
                 </div>
+              </div>
+
+              {/* Vital Signs */}
+              <div className="border-b border-white/20 pb-4">
+                <h3 className="text-white font-bold mb-4">💊 Vital Signs</h3>
                 <div>
-                  <label className="block text-white font-semibold mb-2">
-                    {t('kidney.labels.bloodPressure')}
-                  </label>
-                  <div className="flex gap-2">
+                  <label className="block text-white font-semibold mb-1 text-sm">Blood Pressure (mmHg) *</label>
+                  <input
+                    type="number"
+                    name="bp"
+                    value={formData.bp}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
+                    placeholder="120-140"
+                  />
+                  <p className="text-white/60 text-xs mt-1">Normal: Less than 120 mmHg</p>
+                </div>
+              </div>
+
+              {/* Urinalysis */}
+              <div className="border-b border-white/20 pb-4">
+                <h3 className="text-white font-bold mb-4">🧬 Urine Analysis</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-white font-semibold mb-1 text-sm">Specific Gravity</label>
                     <input
                       type="number"
-                      name="systolicBP"
-                      value={formData.systolicBP}
+                      name="sg"
+                      value={formData.sg}
                       onChange={handleInputChange}
-                      className="w-1/2 px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
-                      placeholder="Systolic"
-                      min="0"
-                      max="300"
+                      step="0.001"
+                      min="1"
+                      max="1.05"
+                      className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
+                      placeholder="1.020"
                     />
-                    <input
-                      type="number"
-                      name="diastolicBP"
-                      value={formData.diastolicBP}
+                    <p className="text-white/60 text-xs mt-1">Normal: 1.005-1.030</p>
+                  </div>
+                  <div>
+                    <label className="block text-white font-semibold mb-1 text-sm">Protein in Urine</label>
+                    <select
+                      name="al"
+                      value={formData.al}
                       onChange={handleInputChange}
-                      className="w-1/2 px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
-                      placeholder="Diastolic"
-                      min="0"
-                      max="300"
-                    />
+                      className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white focus:outline-none focus:border-white/60 transition-all text-sm appearance-none"
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'right 0.5rem center',
+                        backgroundSize: '1.5em 1.5em',
+                        paddingRight: '2.5rem'
+                      }}
+                    >
+                      <option value="0">Absent</option>
+                      <option value="1">Trace</option>
+                      <option value="2">++</option>
+                      <option value="3">+++</option>
+                    </select>
                   </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              {/* Sugar & RBC */}
+              <div className="border-b border-white/20 pb-4">
+                <h3 className="text-white font-bold mb-4">🔬 Urine Components</h3>
                 <div>
-                  <label className="block text-white font-semibold mb-2">
-                    {t('kidney.labels.glucose')}
-                  </label>
-                  <input
-                    type="number"
-                    name="glucose"
-                    value={formData.glucose}
+                  <label className="block text-white font-semibold mb-1 text-sm">Sugar in Urine</label>
+                  <select
+                    name="su"
+                    value={formData.su}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
-                    placeholder="e.g. 100"
-                    min="0"
-                    step="1"
-                  />
-                </div>
-                <div>
-                  <label className="block text-white font-semibold mb-2">
-                    {t('kidney.labels.potassium')}
-                  </label>
-                  <input
-                    type="number"
-                    name="potassium"
-                    value={formData.potassium}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
-                    placeholder="e.g. 4.5"
-                    step="0.1"
-                    min="0"
-                  />
+                    className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white focus:outline-none focus:border-white/60 transition-all appearance-none"
+                    style={{
+                      backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'right 0.5rem center',
+                      backgroundSize: '1.5em 1.5em',
+                      paddingRight: '2.5rem'
+                    }}
+                  >
+                    <option value="0">Absent</option>
+                    <option value="1">Present</option>
+                  </select>
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-white font-semibold mb-2">
-                    {t('kidney.labels.creatinine')}
-                  </label>
-                  <input
-                    type="number"
-                    name="creatinine"
-                    value={formData.creatinine}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
-                    placeholder="e.g. 0.9"
-                    step="0.1"
-                    min="0"
-                  />
-                </div>
-                <div>
-                  <label className="block text-white font-semibold mb-2">
-                    {t('kidney.labels.bmi')}
-                  </label>
-                  <input
-                    type="number"
-                    name="bmi"
-                    value={formData.bmi}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
-                    placeholder="e.g. 24.5"
-                    step="0.1"
-                    min="0"
-                  />
+              {/* Blood Chemistry */}
+              <div className="border-b border-white/20 pb-4">
+                <h3 className="text-white font-bold mb-4">🧪 Blood Chemistry</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-white font-semibold mb-1 text-sm">Fasting Blood Glucose (mg/dL) *</label>
+                    <input
+                      type="number"
+                      name="bgr"
+                      value={formData.bgr}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
+                      placeholder="120"
+                    />
+                    <p className="text-white/60 text-xs mt-1">Normal: 70-100 mg/dL</p>
+                  </div>
+                  <div>
+                    <label className="block text-white font-semibold mb-1 text-sm">Blood Urea Nitrogen (mg/dL)</label>
+                    <input
+                      type="number"
+                      name="bu"
+                      value={formData.bu}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
+                      placeholder="25"
+                    />
+                    <p className="text-white/60 text-xs mt-1">Normal: 7-20 mg/dL</p>
+                  </div>
                 </div>
               </div>
 
+              {/* Kidney Function */}
+              <div className="border-b border-white/20 pb-4">
+                <h3 className="text-white font-bold mb-4">🫀 Kidney Function</h3>
+                <div>
+                  <label className="block text-white font-semibold mb-1 text-sm">Serum Creatinine (mg/dL) *</label>
+                  <input
+                    type="number"
+                    name="sc"
+                    value={formData.sc}
+                    onChange={handleInputChange}
+                    step="0.1"
+                    className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
+                    placeholder="0.9"
+                  />
+                  <p className="text-white/60 text-xs mt-1">Normal: 0.7-1.3 mg/dL (Higher = Reduced kidney function)</p>
+                </div>
+              </div>
+
+              {/* Electrolytes */}
+              <div className="border-b border-white/20 pb-4">
+                <h3 className="text-white font-bold mb-4">⚡ Electrolytes</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-white font-semibold mb-1 text-sm">Sodium (mEq/L)</label>
+                    <input
+                      type="number"
+                      name="sod"
+                      value={formData.sod}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
+                      placeholder="138"
+                    />
+                    <p className="text-white/60 text-xs mt-1">Normal: 136-145 mEq/L</p>
+                  </div>
+                  <div>
+                    <label className="block text-white font-semibold mb-1 text-sm">Potassium (mEq/L)</label>
+                    <input
+                      type="number"
+                      name="pot"
+                      value={formData.pot}
+                      onChange={handleInputChange}
+                      step="0.1"
+                      className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
+                      placeholder="5.2"
+                    />
+                    <p className="text-white/60 text-xs mt-1">Normal: 3.5-5.0 mEq/L</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Complete Blood Count */}
               <div>
-                <label className="block text-white font-semibold mb-2">
-                  {t('kidney.labels.smokingStatus')}
-                </label>
-                <select
-                  name="smokingStatus"
-                  value={formData.smokingStatus}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white focus:outline-none focus:border-white/60 transition-all"
-                >
-                  <option value="no">No</option>
-                  <option value="yes">Yes</option>
-                  <option value="former">Former Smoker</option>
-                </select>
+                <h3 className="text-white font-bold mb-4">🔴 Complete Blood Count</h3>
+                <div className="grid grid-cols-3 gap-3">
+                  <div>
+                    <label className="block text-white font-semibold mb-1 text-sm">Hemoglobin (g/dL)</label>
+                    <input
+                      type="number"
+                      name="hemo"
+                      value={formData.hemo}
+                      onChange={handleInputChange}
+                      step="0.1"
+                      className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
+                      placeholder="10.5"
+                    />
+                    <p className="text-white/60 text-xs mt-1">M: 13.5-17.5</p>
+                  </div>
+                  <div>
+                    <label className="block text-white font-semibold mb-1 text-sm">Hematocrit (%)</label>
+                    <input
+                      type="number"
+                      name="pcv"
+                      value={formData.pcv}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
+                      placeholder="35"
+                    />
+                    <p className="text-white/60 text-xs mt-1">M: 41-50%</p>
+                  </div>
+                  <div>
+                    <label className="block text-white font-semibold mb-1 text-sm">WBC Count (/mm³)</label>
+                    <input
+                      type="number"
+                      name="wc"
+                      value={formData.wc}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white/60 transition-all"
+                      placeholder="8000"
+                    />
+                    <p className="text-white/60 text-xs mt-1">Normal: 4500-11000</p>
+                  </div>
+                </div>
               </div>
 
               <motion.button
@@ -227,61 +382,78 @@ export const KidneyPrediction = () => {
                 disabled={loading}
                 className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-lg hover:shadow-lg transition-all disabled:opacity-50"
               >
-                {loading ? t('common.loading') : t('kidney.predict')}
+                {loading ? 'Analyzing...' : '🔍 Get Prediction'}
               </motion.button>
+
+              <p className="text-white/60 text-xs">* Required fields</p>
             </form>
           </motion.div>
 
-          {/* 3D Animation & Results */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             className="flex flex-col gap-8"
           >
-            {/* 3D Animation */}
             <div className="h-80 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 overflow-hidden">
-              {typeof MoleculeAnimation === 'function' ? (
-                <MoleculeAnimation color="#00d9ff" />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center text-white">
-                  Loading animation...
-                </div>
-              )}
+              <MoleculeAnimation color="#00d9ff" />
             </div>
 
-            {/* Results */}
-            {kidneyResult && (
+            {result && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className={`bg-gradient-to-br ${getRiskColor(kidneyResult.risk_score)} rounded-2xl p-8 text-white border border-white/20`}
+                className={`bg-gradient-to-br ${getRiskColor(result.probability || 0)} rounded-2xl p-8 text-white border border-white/20`}
               >
-                <h3 className="text-2xl font-bold mb-4">{t('kidney.results')}</h3>
+                <h3 className="text-2xl font-bold mb-4">🎯 Prediction Result</h3>
                 
                 <div className="space-y-4">
                   <div>
-                    <p className="text-white/80">Risk Level</p>
-                    <p className="text-3xl font-bold">{getRiskLabel(kidneyResult.risk_score)}</p>
+                    <p className="text-white/80 text-sm">Risk Level</p>
+                    <p className="text-3xl font-bold">{getRiskLabel(result.probability || 0)}</p>
                   </div>
 
                   <div>
-                    <p className="text-white/80">Confidence</p>
+                    <p className="text-white/80 text-sm">CKD Stage</p>
+                    <p className="text-xl font-bold">{getCKDStage(result.probability || 0)}</p>
+                  </div>
+
+                  <div>
+                    <p className="text-white/80 text-sm">Confidence Score</p>
                     <div className="bg-white/20 rounded-full h-2 mt-2 overflow-hidden">
-                      <div
-                        className="bg-white h-full transition-all duration-500"
-                        style={{ width: `${Math.min((kidneyResult.confidence ?? 0.82) * 100, 100)}%` }}
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${Math.min((result.probability || 0) * 100, 100)}%` }}
+                        transition={{ duration: 1, ease: 'easeInOut' }}
+                        className="bg-white h-full"
                       />
                     </div>
-                    <p className="text-sm mt-2">{((kidneyResult.confidence ?? 0.82) * 100).toFixed(1)}%</p>
+                    <p className="text-sm mt-2">{((result.probability || 0) * 100).toFixed(1)}%</p>
                   </div>
 
                   <div className="pt-4 border-t border-white/20">
-                    <p className="font-semibold mb-2">{t('common.recommendation')}</p>
-                    <p className="text-white/90">
-                      {kidneyResult.risk_score > 0.7
-                        ? t('common.consultDoctor')
-                        : t('common.healthyStatus')}
-                    </p>
+                    <p className="font-semibold mb-2">💡 Recommendation</p>
+                    <div className="text-white/90 text-sm space-y-1">
+                      {result.probability > 0.7 ? (
+                        <>
+                          <p>✓ Schedule urgent nephrologist consultation</p>
+                          <p>✓ Get comprehensive metabolic panel</p>
+                          <p>✓ Monitor blood pressure daily</p>
+                          <p>✓ Reduce sodium and protein intake</p>
+                        </>
+                      ) : result.probability > 0.4 ? (
+                        <>
+                          <p>✓ Schedule doctor appointment within 2 weeks</p>
+                          <p>✓ Monitor vital signs regularly</p>
+                          <p>✓ Maintain healthy lifestyle</p>
+                        </>
+                      ) : (
+                        <>
+                          <p>✓ Annual kidney function screening</p>
+                          <p>✓ Maintain healthy diet and exercise</p>
+                          <p>✓ Regular medical check-ups</p>
+                        </>
+                      )}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -289,6 +461,34 @@ export const KidneyPrediction = () => {
           </motion.div>
         </div>
       </div>
+
+      <style jsx>{`
+        select {
+          appearance: none;
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+          background-repeat: no-repeat;
+          background-position: right 0.5rem center;
+          background-size: 1.5em 1.5em;
+          padding-right: 2.5rem;
+        }
+
+        select option {
+          background: #1a1a2e;
+          color: white;
+          padding: 10px;
+          margin: 5px 0;
+        }
+
+        select option:hover {
+          background: #367dd3;
+          color: white;
+        }
+
+        select:focus {
+          outline: none;
+          border-color: white;
+        }
+      `}</style>
     </div>
   );
 };

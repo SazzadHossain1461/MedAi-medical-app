@@ -10,6 +10,10 @@ import { DenguePrediction } from './components/DenguePrediction';
 import { KidneyPrediction } from './components/KidneyPrediction';
 import { MentalHealthAssessment } from './components/MentalHealthAssessment';
 import { Footer } from './components/Footer';
+import { Login } from './components/Auth/Login';
+import { Signup } from './components/Auth/Signup';
+import { PatientHistory } from './components/PatientHistory';
+import { ProtectedRoute } from './ProtectedRoute';
 
 function App() {
   return (
@@ -18,10 +22,34 @@ function App() {
         <Navigation />
         <main className="flex-grow w-full">
           <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            
             <Route path="/" element={<HomePage />} />
-            <Route path="/dengue" element={<DenguePrediction />} />
-            <Route path="/kidney" element={<KidneyPrediction />} />
-            <Route path="/mental" element={<MentalHealthAssessment />} />
+            
+            <Route path="/dengue" element={
+              <ProtectedRoute>
+                <DenguePrediction />
+              </ProtectedRoute>
+            } />
+            
+            <Route path="/kidney" element={
+              <ProtectedRoute>
+                <KidneyPrediction />
+              </ProtectedRoute>
+            } />
+            
+            <Route path="/mental" element={
+              <ProtectedRoute>
+                <MentalHealthAssessment />
+              </ProtectedRoute>
+            } />
+            
+            <Route path="/history" element={
+              <ProtectedRoute>
+                <PatientHistory />
+              </ProtectedRoute>
+            } />
           </Routes>
         </main>
         <Footer />

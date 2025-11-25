@@ -586,3 +586,228 @@
 2025-11-20 13:17:31,607 - api_endpoints - WARNING - Missing feature treatment in input, using default value 0.0
 2025-11-20 13:17:38,052 - api_endpoints - INFO - Mental health assessment: Mild
 2025-11-20 13:17:38,055 - werkzeug - INFO - 127.0.0.1 - - [20/Nov/2025 13:17:38] "POST /api/mental-health/assessment HTTP/1.1" 200 -
+2025-11-22 02:09:10,011 - __main__ - INFO - Directory ensured: models
+2025-11-22 02:09:10,027 - __main__ - INFO - Directory ensured: logs
+2025-11-22 02:09:10,028 - __main__ - INFO - Directory ensured: datasets
+2025-11-22 02:09:10,028 - __main__ - INFO - Directory ensured: database
+2025-11-22 02:09:10,028 - __main__ - INFO - Directory ensured: instance
+2025-11-22 02:09:10,028 - __main__ - INFO - ============================================================
+2025-11-22 02:09:10,028 - __main__ - INFO - Starting Training for All Models
+2025-11-22 02:09:10,029 - __main__ - INFO - ============================================================
+2025-11-22 02:09:56,559 - __main__ - INFO - Database initialized successfully
+2025-11-22 02:09:56,575 - __main__ - INFO - ============================================================
+2025-11-22 02:09:56,575 - __main__ - INFO - Starting Dengue Model Training
+2025-11-22 02:09:56,575 - __main__ - INFO - ============================================================
+2025-11-22 02:09:56,715 - training_pipeline - INFO - Starting training pipeline for DENGUE
+2025-11-22 02:09:56,715 - training_pipeline - INFO - Preparing dengue data...
+2025-11-22 02:09:56,715 - training_pipeline - INFO - Generating sample data for dengue...
+2025-11-22 02:09:56,747 - training_pipeline - INFO - Training supervised model for dengue...
+2025-11-22 02:09:56,762 - training_pipeline - INFO - Building model for dengue...
+2025-11-22 02:10:10,294 - training_pipeline - INFO - Test Metrics - Loss: 0.2482, Accuracy: 0.9000, Precision: 0.8689, Recall: 0.8154, F1: 0.8413
+2025-11-22 02:10:10,466 - training_pipeline - INFO - Optimizing dengue model with RL...
+2025-11-22 02:10:10,919 - reward_system - INFO - Optimal threshold for dengue: 0.300 with reward: 0.7746
+2025-11-22 02:10:10,919 - training_pipeline - INFO - Optimal threshold: 0.300, Best reward: 0.7746
+2025-11-22 02:10:10,919 - reinforcement_learning - ERROR - Model for dengue not available
+2025-11-22 02:10:10,919 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-22 02:10:11,013 - training_pipeline - INFO - Training pipeline completed for DENGUE
+2025-11-22 02:10:11,013 - __main__ - INFO - Dengue model training completed successfully
+2025-11-22 02:10:11,013 - __main__ - INFO - ============================================================
+2025-11-22 02:10:11,013 - __main__ - INFO - Starting Kidney Disease Model Training
+2025-11-22 02:10:11,013 - __main__ - INFO - ============================================================
+2025-11-22 02:10:11,013 - training_pipeline - INFO - Starting training pipeline for KIDNEY
+2025-11-22 02:10:11,013 - training_pipeline - INFO - Preparing kidney data...
+2025-11-22 02:10:11,013 - training_pipeline - INFO - Generating sample data for kidney...
+2025-11-22 02:10:11,029 - training_pipeline - INFO - Training supervised model for kidney...
+2025-11-22 02:10:11,029 - training_pipeline - INFO - Building model for kidney...
+2025-11-22 02:10:15,080 - training_pipeline - INFO - Test Metrics - Loss: 0.2664, Accuracy: 0.9100, Precision: 0.9217, Recall: 0.9217, F1: 0.9217
+2025-11-22 02:10:15,126 - training_pipeline - INFO - Optimizing kidney model with RL...
+2025-11-22 02:10:15,392 - reward_system - INFO - Optimal threshold for kidney: 0.500 with reward: 0.8104
+2025-11-22 02:10:15,408 - training_pipeline - INFO - Optimal threshold: 0.500, Best reward: 0.8104
+2025-11-22 02:10:15,408 - reinforcement_learning - ERROR - Model for kidney not available
+2025-11-22 02:10:15,408 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-22 02:10:15,470 - training_pipeline - INFO - Training pipeline completed for KIDNEY
+2025-11-22 02:10:15,486 - __main__ - INFO - Kidney disease model training completed successfully
+2025-11-22 02:10:15,486 - __main__ - INFO - ============================================================
+2025-11-22 02:10:15,486 - __main__ - INFO - Starting Mental Health Model Training
+2025-11-22 02:10:15,486 - __main__ - INFO - ============================================================
+2025-11-22 02:10:15,486 - training_pipeline - INFO - Starting training pipeline for MENTAL_HEALTH
+2025-11-22 02:10:15,486 - training_pipeline - INFO - Preparing mental_health data...
+2025-11-22 02:10:15,486 - training_pipeline - INFO - Generating sample data for mental_health...
+2025-11-22 02:10:15,486 - training_pipeline - INFO - Training supervised model for mental_health...
+2025-11-22 02:10:15,486 - training_pipeline - INFO - Building model for mental_health...
+2025-11-22 02:10:18,470 - training_pipeline - INFO - Test Metrics - Loss: 0.1455, Accuracy: 0.9350, Precision: 0.7647, Recall: 0.8387, F1: 0.8000
+2025-11-22 02:10:18,502 - training_pipeline - INFO - Optimizing mental_health model with RL...
+2025-11-22 02:10:18,767 - reward_system - INFO - Optimal threshold for mental_health: 0.300 with reward: 0.8580
+2025-11-22 02:10:18,767 - training_pipeline - INFO - Optimal threshold: 0.300, Best reward: 0.8580
+2025-11-22 02:10:18,767 - reinforcement_learning - ERROR - Model for mental_health not available
+2025-11-22 02:10:18,767 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-22 02:10:18,845 - training_pipeline - INFO - Training pipeline completed for MENTAL_HEALTH
+2025-11-22 02:10:18,845 - __main__ - INFO - Mental health model training completed successfully
+2025-11-22 02:10:18,845 - __main__ - INFO - All models trained successfully
+2025-11-22 02:10:24,317 - __main__ - INFO - Directory ensured: models
+2025-11-22 02:10:24,318 - __main__ - INFO - Directory ensured: logs
+2025-11-22 02:10:24,318 - __main__ - INFO - Directory ensured: datasets
+2025-11-22 02:10:24,318 - __main__ - INFO - Directory ensured: database
+2025-11-22 02:10:24,319 - __main__ - INFO - Directory ensured: instance
+2025-11-22 02:10:24,319 - __main__ - INFO - ============================================================
+2025-11-22 02:10:24,320 - __main__ - INFO - Starting API Server
+2025-11-22 02:10:24,321 - __main__ - INFO - ============================================================
+2025-11-22 02:10:29,190 - __main__ - INFO - Database initialized successfully
+2025-11-22 02:10:29,534 - api_endpoints - INFO - Models loaded successfully
+2025-11-22 02:10:29,534 - __main__ - INFO - Server starting on 0.0.0.0:5000
+2025-11-22 02:10:29,596 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.109:5000
+2025-11-22 02:10:29,596 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-22 02:14:12,682 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 02:14:12] "OPTIONS /api/kidney/predict HTTP/1.1" 200 -
+2025-11-22 02:14:12,932 - api_endpoints - WARNING - Missing feature bp in input, using default value 0.0
+2025-11-22 02:14:12,932 - api_endpoints - WARNING - Missing feature sg in input, using default value 0.0
+2025-11-22 02:14:12,932 - api_endpoints - WARNING - Missing feature al in input, using default value 0.0
+2025-11-22 02:14:12,932 - api_endpoints - WARNING - Missing feature su in input, using default value 0.0
+2025-11-22 02:14:12,932 - api_endpoints - WARNING - Missing feature bgr in input, using default value 0.0
+2025-11-22 02:14:12,932 - api_endpoints - WARNING - Missing feature bu in input, using default value 0.0
+2025-11-22 02:14:12,932 - api_endpoints - WARNING - Missing feature sc in input, using default value 0.0
+2025-11-22 02:14:12,932 - api_endpoints - WARNING - Missing feature sod in input, using default value 0.0
+2025-11-22 02:14:12,932 - api_endpoints - WARNING - Missing feature pot in input, using default value 0.0
+2025-11-22 02:14:12,932 - api_endpoints - WARNING - Missing feature hemo in input, using default value 0.0
+2025-11-22 02:14:12,932 - api_endpoints - WARNING - Missing feature pcv in input, using default value 0.0
+2025-11-22 02:14:12,932 - api_endpoints - WARNING - Missing feature wc in input, using default value 0.0
+2025-11-22 02:14:16,318 - api_endpoints - INFO - Kidney prediction made: Stage 5 (ESRD)
+2025-11-22 02:14:16,319 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 02:14:16] "POST /api/kidney/predict HTTP/1.1" 200 -
+2025-11-22 02:14:54,007 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 02:14:54] "OPTIONS /api/kidney/predict HTTP/1.1" 200 -
+2025-11-22 02:14:54,257 - api_endpoints - WARNING - Missing feature bp in input, using default value 0.0
+2025-11-22 02:14:54,257 - api_endpoints - WARNING - Missing feature sg in input, using default value 0.0
+2025-11-22 02:14:54,257 - api_endpoints - WARNING - Missing feature al in input, using default value 0.0
+2025-11-22 02:14:54,257 - api_endpoints - WARNING - Missing feature su in input, using default value 0.0
+2025-11-22 02:14:54,257 - api_endpoints - WARNING - Missing feature bgr in input, using default value 0.0
+2025-11-22 02:14:54,257 - api_endpoints - WARNING - Missing feature bu in input, using default value 0.0
+2025-11-22 02:14:54,257 - api_endpoints - WARNING - Missing feature sc in input, using default value 0.0
+2025-11-22 02:14:54,257 - api_endpoints - WARNING - Missing feature sod in input, using default value 0.0
+2025-11-22 02:14:54,257 - api_endpoints - WARNING - Missing feature pot in input, using default value 0.0
+2025-11-22 02:14:54,257 - api_endpoints - WARNING - Missing feature hemo in input, using default value 0.0
+2025-11-22 02:14:54,257 - api_endpoints - WARNING - Missing feature pcv in input, using default value 0.0
+2025-11-22 02:14:54,257 - api_endpoints - WARNING - Missing feature wc in input, using default value 0.0
+2025-11-22 02:14:54,491 - api_endpoints - INFO - Kidney prediction made: Stage 5 (ESRD)
+2025-11-22 02:14:54,491 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 02:14:54] "POST /api/kidney/predict HTTP/1.1" 200 -
+2025-11-22 02:15:04,818 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 02:15:04] "OPTIONS /api/kidney/predict HTTP/1.1" 200 -
+2025-11-22 02:15:05,084 - api_endpoints - WARNING - Missing feature bp in input, using default value 0.0
+2025-11-22 02:15:05,084 - api_endpoints - WARNING - Missing feature sg in input, using default value 0.0
+2025-11-22 02:15:05,084 - api_endpoints - WARNING - Missing feature al in input, using default value 0.0
+2025-11-22 02:15:05,084 - api_endpoints - WARNING - Missing feature su in input, using default value 0.0
+2025-11-22 02:15:05,084 - api_endpoints - WARNING - Missing feature bgr in input, using default value 0.0
+2025-11-22 02:15:05,084 - api_endpoints - WARNING - Missing feature bu in input, using default value 0.0
+2025-11-22 02:15:05,084 - api_endpoints - WARNING - Missing feature sc in input, using default value 0.0
+2025-11-22 02:15:05,084 - api_endpoints - WARNING - Missing feature sod in input, using default value 0.0
+2025-11-22 02:15:05,084 - api_endpoints - WARNING - Missing feature pot in input, using default value 0.0
+2025-11-22 02:15:05,084 - api_endpoints - WARNING - Missing feature hemo in input, using default value 0.0
+2025-11-22 02:15:05,084 - api_endpoints - WARNING - Missing feature pcv in input, using default value 0.0
+2025-11-22 02:15:05,084 - api_endpoints - WARNING - Missing feature wc in input, using default value 0.0
+2025-11-22 02:15:05,301 - api_endpoints - INFO - Kidney prediction made: Stage 5 (ESRD)
+2025-11-22 02:15:05,301 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 02:15:05] "POST /api/kidney/predict HTTP/1.1" 200 -
+2025-11-22 02:15:43,256 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 02:15:43] "OPTIONS /api/mental-health/assessment HTTP/1.1" 200 -
+2025-11-22 02:15:43,507 - api_endpoints - WARNING - Missing feature age in input, using default value 0.0
+2025-11-22 02:15:43,507 - api_endpoints - WARNING - Missing feature gender in input, using default value 0.0
+2025-11-22 02:15:43,507 - api_endpoints - WARNING - Missing feature employment in input, using default value 0.0
+2025-11-22 02:15:43,507 - api_endpoints - WARNING - Missing feature work_env in input, using default value 0.0
+2025-11-22 02:15:43,507 - api_endpoints - WARNING - Missing feature stress in input, using default value 0.0
+2025-11-22 02:15:43,507 - api_endpoints - WARNING - Missing feature sleep in input, using default value 0.0
+2025-11-22 02:15:43,507 - api_endpoints - WARNING - Missing feature activity in input, using default value 0.0
+2025-11-22 02:15:43,507 - api_endpoints - WARNING - Missing feature depression in input, using default value 0.0
+2025-11-22 02:15:43,507 - api_endpoints - WARNING - Missing feature anxiety in input, using default value 0.0
+2025-11-22 02:15:43,507 - api_endpoints - WARNING - Missing feature support in input, using default value 0.0
+2025-11-22 02:15:43,507 - api_endpoints - WARNING - Missing feature productivity in input, using default value 0.0
+2025-11-22 02:15:43,507 - api_endpoints - WARNING - Missing feature mh_history in input, using default value 0.0
+2025-11-22 02:15:43,507 - api_endpoints - WARNING - Missing feature treatment in input, using default value 0.0
+2025-11-22 02:15:43,790 - api_endpoints - INFO - Mental health assessment: Mild
+2025-11-22 02:15:43,790 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 02:15:43] "POST /api/mental-health/assessment HTTP/1.1" 200 -
+2025-11-22 12:33:04,126 - __main__ - INFO - Directory ensured: models
+2025-11-22 12:33:04,138 - __main__ - INFO - Directory ensured: logs
+2025-11-22 12:33:04,138 - __main__ - INFO - Directory ensured: datasets
+2025-11-22 12:33:04,138 - __main__ - INFO - Directory ensured: database
+2025-11-22 12:33:04,139 - __main__ - INFO - Directory ensured: instance
+2025-11-22 12:33:04,139 - __main__ - INFO - ============================================================
+2025-11-22 12:33:04,139 - __main__ - INFO - Starting Training for All Models
+2025-11-22 12:33:04,139 - __main__ - INFO - ============================================================
+2025-11-22 12:33:52,770 - __main__ - INFO - Database initialized successfully
+2025-11-22 12:33:52,770 - __main__ - INFO - ============================================================
+2025-11-22 12:33:52,770 - __main__ - INFO - Starting Dengue Model Training
+2025-11-22 12:33:52,770 - __main__ - INFO - ============================================================
+2025-11-22 12:33:52,879 - training_pipeline - INFO - Starting training pipeline for DENGUE
+2025-11-22 12:33:52,879 - training_pipeline - INFO - Preparing dengue data...
+2025-11-22 12:33:52,879 - training_pipeline - INFO - Generating sample data for dengue...
+2025-11-22 12:33:52,911 - training_pipeline - INFO - Training supervised model for dengue...
+2025-11-22 12:33:52,911 - training_pipeline - INFO - Building model for dengue...
+2025-11-22 12:34:05,125 - training_pipeline - INFO - Test Metrics - Loss: 0.1673, Accuracy: 0.9250, Precision: 0.9032, Recall: 0.8615, F1: 0.8819
+2025-11-22 12:34:05,646 - training_pipeline - INFO - Optimizing dengue model with RL...
+2025-11-22 12:34:06,177 - reward_system - INFO - Optimal threshold for dengue: 0.300 with reward: 0.8406
+2025-11-22 12:34:06,177 - training_pipeline - INFO - Optimal threshold: 0.300, Best reward: 0.8406
+2025-11-22 12:34:06,177 - reinforcement_learning - ERROR - Model for dengue not available
+2025-11-22 12:34:06,177 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-22 12:34:06,271 - training_pipeline - INFO - Training pipeline completed for DENGUE
+2025-11-22 12:34:06,271 - __main__ - INFO - Dengue model training completed successfully
+2025-11-22 12:34:06,271 - __main__ - INFO - ============================================================
+2025-11-22 12:34:06,286 - __main__ - INFO - Starting Kidney Disease Model Training
+2025-11-22 12:34:06,286 - __main__ - INFO - ============================================================
+2025-11-22 12:34:06,286 - training_pipeline - INFO - Starting training pipeline for KIDNEY
+2025-11-22 12:34:06,286 - training_pipeline - INFO - Preparing kidney data...
+2025-11-22 12:34:06,286 - training_pipeline - INFO - Generating sample data for kidney...
+2025-11-22 12:34:06,302 - training_pipeline - INFO - Training supervised model for kidney...
+2025-11-22 12:34:06,302 - training_pipeline - INFO - Building model for kidney...
+2025-11-22 12:34:10,324 - training_pipeline - INFO - Test Metrics - Loss: 0.2678, Accuracy: 0.8850, Precision: 0.8898, Recall: 0.9130, F1: 0.9013
+2025-11-22 12:34:10,462 - training_pipeline - INFO - Optimizing kidney model with RL...
+2025-11-22 12:34:10,777 - reward_system - INFO - Optimal threshold for kidney: 0.460 with reward: 0.7871
+2025-11-22 12:34:10,778 - training_pipeline - INFO - Optimal threshold: 0.460, Best reward: 0.7871
+2025-11-22 12:34:10,780 - reinforcement_learning - ERROR - Model for kidney not available
+2025-11-22 12:34:10,782 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-22 12:34:10,868 - training_pipeline - INFO - Training pipeline completed for KIDNEY
+2025-11-22 12:34:10,872 - __main__ - INFO - Kidney disease model training completed successfully
+2025-11-22 12:34:10,873 - __main__ - INFO - ============================================================
+2025-11-22 12:34:10,874 - __main__ - INFO - Starting Mental Health Model Training
+2025-11-22 12:34:10,874 - __main__ - INFO - ============================================================
+2025-11-22 12:34:10,875 - training_pipeline - INFO - Starting training pipeline for MENTAL_HEALTH
+2025-11-22 12:34:10,878 - training_pipeline - INFO - Preparing mental_health data...
+2025-11-22 12:34:10,878 - training_pipeline - INFO - Generating sample data for mental_health...
+2025-11-22 12:34:10,887 - training_pipeline - INFO - Training supervised model for mental_health...
+2025-11-22 12:34:10,887 - training_pipeline - INFO - Building model for mental_health...
+2025-11-22 12:34:14,962 - training_pipeline - INFO - Test Metrics - Loss: 0.1357, Accuracy: 0.9350, Precision: 0.7812, Recall: 0.8065, F1: 0.7937
+2025-11-22 12:34:15,113 - training_pipeline - INFO - Optimizing mental_health model with RL...
+2025-11-22 12:34:15,397 - reward_system - INFO - Optimal threshold for mental_health: 0.260 with reward: 0.8194
+2025-11-22 12:34:15,397 - training_pipeline - INFO - Optimal threshold: 0.260, Best reward: 0.8194
+2025-11-22 12:34:15,397 - reinforcement_learning - ERROR - Model for mental_health not available
+2025-11-22 12:34:15,397 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-22 12:34:15,475 - training_pipeline - INFO - Training pipeline completed for MENTAL_HEALTH
+2025-11-22 12:34:15,475 - __main__ - INFO - Mental health model training completed successfully
+2025-11-22 12:34:15,475 - __main__ - INFO - All models trained successfully
+2025-11-22 12:34:52,966 - __main__ - INFO - Directory ensured: models
+2025-11-22 12:34:52,966 - __main__ - INFO - Directory ensured: logs
+2025-11-22 12:34:52,966 - __main__ - INFO - Directory ensured: datasets
+2025-11-22 12:34:52,966 - __main__ - INFO - Directory ensured: database
+2025-11-22 12:34:52,966 - __main__ - INFO - Directory ensured: instance
+2025-11-22 12:34:52,966 - __main__ - INFO - ============================================================
+2025-11-22 12:34:52,966 - __main__ - INFO - Starting API Server
+2025-11-22 12:34:52,966 - __main__ - INFO - ============================================================
+2025-11-22 12:35:04,467 - __main__ - INFO - Database initialized successfully
+2025-11-22 12:35:04,967 - api_endpoints - INFO - Models loaded successfully
+2025-11-22 12:35:04,967 - __main__ - INFO - Server starting on 0.0.0.0:5000
+2025-11-22 12:35:05,036 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.109:5000
+2025-11-22 12:35:05,036 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-22 12:39:27,592 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 12:39:27] "OPTIONS /api/dengue/predict HTTP/1.1" 200 -
+2025-11-22 12:39:27,859 - api_endpoints - ERROR - Error preprocessing input for dengue: could not convert string to float: ''
+2025-11-22 12:39:27,859 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 12:39:27] "[31m[1mPOST /api/dengue/predict HTTP/1.1[0m" 400 -
+2025-11-22 12:39:32,864 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 12:39:32] "OPTIONS /api/dengue/predict HTTP/1.1" 200 -
+2025-11-22 12:39:33,181 - api_endpoints - ERROR - Error preprocessing input for dengue: could not convert string to float: ''
+2025-11-22 12:39:33,181 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 12:39:33] "[31m[1mPOST /api/dengue/predict HTTP/1.1[0m" 400 -
+2025-11-22 12:39:39,237 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 12:39:39] "OPTIONS /api/dengue/predict HTTP/1.1" 200 -
+2025-11-22 12:39:39,554 - api_endpoints - ERROR - Error preprocessing input for dengue: could not convert string to float: ''
+2025-11-22 12:39:39,554 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 12:39:39] "[31m[1mPOST /api/dengue/predict HTTP/1.1[0m" 400 -
+2025-11-22 12:46:01,251 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 12:46:01] "OPTIONS /api/dengue/predict HTTP/1.1" 200 -
+2025-11-22 12:46:05,094 - api_endpoints - INFO - Dengue prediction made: Low Risk
+2025-11-22 12:46:05,094 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 12:46:05] "POST /api/dengue/predict HTTP/1.1" 200 -
+2025-11-22 13:01:01,415 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 13:01:01] "OPTIONS /api/kidney/predict HTTP/1.1" 200 -
+2025-11-22 13:01:41,521 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 13:01:41] "OPTIONS /api/kidney/predict HTTP/1.1" 200 -
+2025-11-22 13:01:48,261 - api_endpoints - INFO - Kidney prediction made: Stage 5 (ESRD)
+2025-11-22 13:01:48,261 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 13:01:48] "POST /api/kidney/predict HTTP/1.1" 200 -

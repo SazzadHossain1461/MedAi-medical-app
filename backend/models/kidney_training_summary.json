@@ -1,14 +1,14 @@
 {
   "disease_type": "kidney",
-  "optimal_threshold": 0.4,
+  "optimal_threshold": 0.4600000000000001,
   "test_metrics": {
-    "optimal_threshold": 0.4,
-    "accuracy": 0.885,
-    "precision": 0.8833333333333333,
-    "recall": 0.9217391304347826,
-    "f1_score": 0.902127659574468,
-    "default_accuracy": 0.89,
-    "improvement": -0.0050000000000000044,
+    "optimal_threshold": 0.4600000000000001,
+    "accuracy": 0.895,
+    "precision": 0.8916666666666667,
+    "recall": 0.9304347826086956,
+    "f1_score": 0.9106382978723404,
+    "default_accuracy": 0.885,
+    "improvement": 0.010000000000000009,
     "disease_type": "kidney"
   },
   "features_used": [
