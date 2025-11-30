@@ -5,7 +5,6 @@ import { useStore } from '../store/store';
 import { kidneyAPI } from '../api/api';
 import { toast } from 'react-toastify';
 import { MoleculeAnimation } from './3D/MoleculeAnimation';
-import { SelectDropdown } from './SelectDropdown';
 
 export const KidneyPrediction = () => {
   const { t } = useTranslation();
@@ -62,7 +61,7 @@ export const KidneyPrediction = () => {
     e.preventDefault();
     
     if (!formData.age || !formData.sc || !formData.bp) {
-      toast.error('Please fill all required fields');
+      toast.error(t('common.error'));
       return;
     }
 
@@ -99,7 +98,7 @@ export const KidneyPrediction = () => {
       
       setResult(newResult);
       savePredictionToHistory(newResult);
-      toast.success('Prediction successful!');
+      toast.success(t('kidney.success'));
     } catch (error) {
       console.error('Prediction error:', error);
       toast.error(error.response?.data?.error || 'Prediction failed. Please check your inputs.');
@@ -115,9 +114,9 @@ export const KidneyPrediction = () => {
   };
 
   const getRiskLabel = (risk) => {
-    if (risk > 0.7) return 'High Risk';
-    if (risk > 0.4) return 'Medium Risk';
-    return 'Low Risk';
+    if (risk > 0.7) return t('common.highRisk');
+    if (risk > 0.4) return t('common.mediumRisk');
+    return t('common.lowRisk');
   };
 
   const getCKDStage = (risk) => {
@@ -131,16 +130,21 @@ export const KidneyPrediction = () => {
   return (
     <div className="pt-24 min-h-screen bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center text-white mb-12"
         >
-          <h1 className="text-5xl font-bold mb-4">Kidney Disease Prediction</h1>
-          <p className="text-xl text-blue-100">Evaluate your kidney health based on medical tests</p>
+          <h1 className="text-5xl font-bold mb-4">{t('kidney.title')}</h1>
+          <p className="text-xl text-blue-100">{t('kidney.subtitle')}</p>
         </motion.div>
 
+        {/* Main Content Grid */}
         <div className="grid md:grid-cols-2 gap-8">
+          
+          {/* LEFT COLUMN - FORM */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -148,11 +152,14 @@ export const KidneyPrediction = () => {
             style={{ maxHeight: '800px', overflowY: 'auto' }}
           >
             <form onSubmit={handleSubmit} className="space-y-5">
-              {/* Demographics */}
+              
+              {/* ===== DEMOGRAPHICS SECTION ===== */}
               <div className="border-b border-white/20 pb-4">
-                <h3 className="text-white font-bold mb-4">👤 Demographics</h3>
+                <h3 className="text-white font-bold mb-4">👤 {t('kidney.demographics')}</h3>
                 <div>
-                  <label className="block text-white font-semibold mb-2">Age (years) *</label>
+                  <label className="block text-white font-semibold mb-2">
+                    {t('kidney.age')} *
+                  </label>
                   <input
                     type="number"
                     name="age"
@@ -166,11 +173,13 @@ export const KidneyPrediction = () => {
                 </div>
               </div>
 
-              {/* Vital Signs */}
+              {/* ===== VITAL SIGNS SECTION ===== */}
               <div className="border-b border-white/20 pb-4">
-                <h3 className="text-white font-bold mb-4">💊 Vital Signs</h3>
+                <h3 className="text-white font-bold mb-4">💊 {t('kidney.vitalSigns')}</h3>
                 <div>
-                  <label className="block text-white font-semibold mb-1 text-sm">Blood Pressure (mmHg) *</label>
+                  <label className="block text-white font-semibold mb-1 text-sm">
+                    {t('kidney.bloodPressure')} *
+                  </label>
                   <input
                     type="number"
                     name="bp"
@@ -183,12 +192,15 @@ export const KidneyPrediction = () => {
                 </div>
               </div>
 
-              {/* Urinalysis */}
+              {/* ===== URINE ANALYSIS SECTION ===== */}
               <div className="border-b border-white/20 pb-4">
-                <h3 className="text-white font-bold mb-4">🧬 Urine Analysis</h3>
+                <h3 className="text-white font-bold mb-4">🧬 {t('kidney.urineAnalysis')}</h3>
                 <div className="grid grid-cols-2 gap-4">
+                  {/* Specific Gravity */}
                   <div>
-                    <label className="block text-white font-semibold mb-1 text-sm">Specific Gravity</label>
+                    <label className="block text-white font-semibold mb-1 text-sm">
+                      {t('kidney.specificGravity')}
+                    </label>
                     <input
                       type="number"
                       name="sg"
@@ -202,8 +214,11 @@ export const KidneyPrediction = () => {
                     />
                     <p className="text-white/60 text-xs mt-1">Normal: 1.005-1.030</p>
                   </div>
+                  {/* Protein in Urine */}
                   <div>
-                    <label className="block text-white font-semibold mb-1 text-sm">Protein in Urine</label>
+                    <label className="block text-white font-semibold mb-1 text-sm">
+                      {t('kidney.proteinInUrine')}
+                    </label>
                     <select
                       name="al"
                       value={formData.al}
@@ -226,11 +241,13 @@ export const KidneyPrediction = () => {
                 </div>
               </div>
 
-              {/* Sugar & RBC */}
+              {/* ===== URINE COMPONENTS SECTION ===== */}
               <div className="border-b border-white/20 pb-4">
-                <h3 className="text-white font-bold mb-4">🔬 Urine Components</h3>
+                <h3 className="text-white font-bold mb-4">🔬 {t('kidney.urineComponents')}</h3>
                 <div>
-                  <label className="block text-white font-semibold mb-1 text-sm">Sugar in Urine</label>
+                  <label className="block text-white font-semibold mb-1 text-sm">
+                    {t('kidney.sugarInUrine')}
+                  </label>
                   <select
                     name="su"
                     value={formData.su}
@@ -250,12 +267,15 @@ export const KidneyPrediction = () => {
                 </div>
               </div>
 
-              {/* Blood Chemistry */}
+              {/* ===== BLOOD CHEMISTRY SECTION ===== */}
               <div className="border-b border-white/20 pb-4">
-                <h3 className="text-white font-bold mb-4">🧪 Blood Chemistry</h3>
+                <h3 className="text-white font-bold mb-4">🧪 {t('kidney.bloodChemistry')}</h3>
                 <div className="grid grid-cols-2 gap-4">
+                  {/* Fasting Glucose */}
                   <div>
-                    <label className="block text-white font-semibold mb-1 text-sm">Fasting Blood Glucose (mg/dL) *</label>
+                    <label className="block text-white font-semibold mb-1 text-sm">
+                      {t('kidney.fastingGlucose')} *
+                    </label>
                     <input
                       type="number"
                       name="bgr"
@@ -266,8 +286,11 @@ export const KidneyPrediction = () => {
                     />
                     <p className="text-white/60 text-xs mt-1">Normal: 70-100 mg/dL</p>
                   </div>
+                  {/* Blood Urea Nitrogen */}
                   <div>
-                    <label className="block text-white font-semibold mb-1 text-sm">Blood Urea Nitrogen (mg/dL)</label>
+                    <label className="block text-white font-semibold mb-1 text-sm">
+                      {t('kidney.bloodUreaNitrogen')}
+                    </label>
                     <input
                       type="number"
                       name="bu"
@@ -281,11 +304,13 @@ export const KidneyPrediction = () => {
                 </div>
               </div>
 
-              {/* Kidney Function */}
+              {/* ===== KIDNEY FUNCTION SECTION ===== */}
               <div className="border-b border-white/20 pb-4">
-                <h3 className="text-white font-bold mb-4">🫀 Kidney Function</h3>
+                <h3 className="text-white font-bold mb-4">🫀 {t('kidney.kidneyFunction')}</h3>
                 <div>
-                  <label className="block text-white font-semibold mb-1 text-sm">Serum Creatinine (mg/dL) *</label>
+                  <label className="block text-white font-semibold mb-1 text-sm">
+                    {t('kidney.serumCreatinine')} *
+                  </label>
                   <input
                     type="number"
                     name="sc"
@@ -299,12 +324,15 @@ export const KidneyPrediction = () => {
                 </div>
               </div>
 
-              {/* Electrolytes */}
+              {/* ===== ELECTROLYTES SECTION ===== */}
               <div className="border-b border-white/20 pb-4">
-                <h3 className="text-white font-bold mb-4">⚡ Electrolytes</h3>
+                <h3 className="text-white font-bold mb-4">⚡ {t('kidney.electrolytes')}</h3>
                 <div className="grid grid-cols-2 gap-4">
+                  {/* Sodium */}
                   <div>
-                    <label className="block text-white font-semibold mb-1 text-sm">Sodium (mEq/L)</label>
+                    <label className="block text-white font-semibold mb-1 text-sm">
+                      {t('kidney.sodium')}
+                    </label>
                     <input
                       type="number"
                       name="sod"
@@ -315,8 +343,11 @@ export const KidneyPrediction = () => {
                     />
                     <p className="text-white/60 text-xs mt-1">Normal: 136-145 mEq/L</p>
                   </div>
+                  {/* Potassium */}
                   <div>
-                    <label className="block text-white font-semibold mb-1 text-sm">Potassium (mEq/L)</label>
+                    <label className="block text-white font-semibold mb-1 text-sm">
+                      {t('kidney.potassium')}
+                    </label>
                     <input
                       type="number"
                       name="pot"
@@ -331,12 +362,15 @@ export const KidneyPrediction = () => {
                 </div>
               </div>
 
-              {/* Complete Blood Count */}
+              {/* ===== COMPLETE BLOOD COUNT SECTION ===== */}
               <div>
-                <h3 className="text-white font-bold mb-4">🔴 Complete Blood Count</h3>
+                <h3 className="text-white font-bold mb-4">🔴 {t('kidney.completeBloodCount')}</h3>
                 <div className="grid grid-cols-3 gap-3">
+                  {/* Hemoglobin */}
                   <div>
-                    <label className="block text-white font-semibold mb-1 text-sm">Hemoglobin (g/dL)</label>
+                    <label className="block text-white font-semibold mb-1 text-sm">
+                      {t('kidney.hemoglobin')}
+                    </label>
                     <input
                       type="number"
                       name="hemo"
@@ -348,8 +382,11 @@ export const KidneyPrediction = () => {
                     />
                     <p className="text-white/60 text-xs mt-1">M: 13.5-17.5</p>
                   </div>
+                  {/* Hematocrit */}
                   <div>
-                    <label className="block text-white font-semibold mb-1 text-sm">Hematocrit (%)</label>
+                    <label className="block text-white font-semibold mb-1 text-sm">
+                      {t('kidney.hematocrit')}
+                    </label>
                     <input
                       type="number"
                       name="pcv"
@@ -360,8 +397,11 @@ export const KidneyPrediction = () => {
                     />
                     <p className="text-white/60 text-xs mt-1">M: 41-50%</p>
                   </div>
+                  {/* WBC Count */}
                   <div>
-                    <label className="block text-white font-semibold mb-1 text-sm">WBC Count (/mm³)</label>
+                    <label className="block text-white font-semibold mb-1 text-sm">
+                      {t('kidney.wbcCount')}
+                    </label>
                     <input
                       type="number"
                       name="wc"
@@ -375,6 +415,7 @@ export const KidneyPrediction = () => {
                 </div>
               </div>
 
+              {/* ===== SUBMIT BUTTON ===== */}
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -382,43 +423,49 @@ export const KidneyPrediction = () => {
                 disabled={loading}
                 className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-lg hover:shadow-lg transition-all disabled:opacity-50"
               >
-                {loading ? 'Analyzing...' : '🔍 Get Prediction'}
+                {loading ? t('kidney.analyzing') : `🔍 ${t('kidney.getPrediction')}`}
               </motion.button>
 
-              <p className="text-white/60 text-xs">* Required fields</p>
+              <p className="text-white/60 text-xs">{t('kidney.requiredFields')}</p>
             </form>
           </motion.div>
 
+          {/* RIGHT COLUMN - VISUALIZATION & RESULTS */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             className="flex flex-col gap-8"
           >
+            {/* 3D Animation Container */}
             <div className="h-80 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 overflow-hidden">
               <MoleculeAnimation color="#00d9ff" />
             </div>
 
+            {/* Results Card - Shows only when result exists */}
             {result && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className={`bg-gradient-to-br ${getRiskColor(result.probability || 0)} rounded-2xl p-8 text-white border border-white/20`}
+                className={`bg-gradient-to-br ${getRiskColor(result.probability || 0)} rounded-2xl p-8 text-white border border-white/20 shadow-2xl`}
               >
-                <h3 className="text-2xl font-bold mb-4">🎯 Prediction Result</h3>
+                <h3 className="text-2xl font-bold mb-4">🎯 {t('kidney.predictResults')}</h3>
                 
                 <div className="space-y-4">
+                  {/* Risk Level Display */}
                   <div>
-                    <p className="text-white/80 text-sm">Risk Level</p>
+                    <p className="text-white/80 text-sm">{t('kidney.riskLevel')}</p>
                     <p className="text-3xl font-bold">{getRiskLabel(result.probability || 0)}</p>
                   </div>
 
+                  {/* CKD Stage */}
                   <div>
-                    <p className="text-white/80 text-sm">CKD Stage</p>
+                    <p className="text-white/80 text-sm">{t('kidney.ckdStage')}</p>
                     <p className="text-xl font-bold">{getCKDStage(result.probability || 0)}</p>
                   </div>
 
+                  {/* Confidence Score with Progress Bar */}
                   <div>
-                    <p className="text-white/80 text-sm">Confidence Score</p>
+                    <p className="text-white/80 text-sm">{t('kidney.confidenceScore')}</p>
                     <div className="bg-white/20 rounded-full h-2 mt-2 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
@@ -430,27 +477,28 @@ export const KidneyPrediction = () => {
                     <p className="text-sm mt-2">{((result.probability || 0) * 100).toFixed(1)}%</p>
                   </div>
 
+                  {/* Recommendations Section */}
                   <div className="pt-4 border-t border-white/20">
-                    <p className="font-semibold mb-2">💡 Recommendation</p>
+                    <p className="font-semibold mb-2">💡 {t('common.recommendation')}</p>
                     <div className="text-white/90 text-sm space-y-1">
                       {result.probability > 0.7 ? (
                         <>
-                          <p>✓ Schedule urgent nephrologist consultation</p>
-                          <p>✓ Get comprehensive metabolic panel</p>
-                          <p>✓ Monitor blood pressure daily</p>
-                          <p>✓ Reduce sodium and protein intake</p>
+                          <p>✓ {t('kidney.scheduleUrgent')}</p>
+                          <p>✓ {t('kidney.getComprehensive')}</p>
+                          <p>✓ {t('kidney.monitorBloodPressure')}</p>
+                          <p>✓ {t('kidney.reduceSodium')}</p>
                         </>
                       ) : result.probability > 0.4 ? (
                         <>
-                          <p>✓ Schedule doctor appointment within 2 weeks</p>
-                          <p>✓ Monitor vital signs regularly</p>
-                          <p>✓ Maintain healthy lifestyle</p>
+                          <p>✓ {t('kidney.scheduleWithin2Weeks')}</p>
+                          <p>✓ {t('kidney.monitorVitalSigns')}</p>
+                          <p>✓ {t('kidney.maintainHealthy')}</p>
                         </>
                       ) : (
                         <>
-                          <p>✓ Annual kidney function screening</p>
-                          <p>✓ Maintain healthy diet and exercise</p>
-                          <p>✓ Regular medical check-ups</p>
+                          <p>✓ {t('kidney.annualScreening')}</p>
+                          <p>✓ {t('kidney.healthyDiet')}</p>
+                          <p>✓ {t('kidney.regularCheckups')}</p>
                         </>
                       )}
                     </div>

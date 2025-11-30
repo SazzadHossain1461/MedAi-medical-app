@@ -1,0 +1,41 @@
+mutation CreateNewUser($email: String!, $firstName: String, $lastName: String, $gender: String, $dateOfBirth: Date) @auth(level: USER) {
+  user_insert(data: {
+    email: $email,
+    firstName: $firstName,
+    lastName: $lastName,
+    gender: $gender,
+    dateOfBirth: $dateOfBirth,
+    createdAt_expr: "request.time"
+  })
+}
+
+query GetUser @auth(level: USER) {
+  user(key: {id_expr: "auth.uid"}) {
+    id
+    firstName
+    lastName
+    email
+    dateOfBirth
+    gender
+  }
+}
+
+mutation AddHealthMetric($metricName: String!, $value: Float!, $unit: String) @auth(level: USER) {
+  healthMetric_insert(data: {
+    userId_expr: "auth.uid",
+    metricName: $metricName,
+    value: $value,
+    unit: $unit,
+    recordedAt_expr: "request.time"
+  })
+}
+
+query ListHealthMetrics @auth(level: USER) {
+  healthMetrics(where: {userId: {eq_expr: "auth.uid"}}, orderBy: [{recordedAt: DESC}]) {
+    id
+    metricName
+    value
+    unit
+    recordedAt
+  }
+}

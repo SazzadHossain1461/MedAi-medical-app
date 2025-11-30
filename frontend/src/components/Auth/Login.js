@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { useStore } from '../../store/store';
 import { toast } from 'react-toastify';
 import { FiMail, FiLock, FiEye, FiEyeOff } from 'react-icons/fi';
+import { FaGoogle } from 'react-icons/fa';
+import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { auth, googleProvider } from '../../config/firebase';
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -35,8 +38,8 @@ export const Login = () => {
       toast.error('Please enter a valid email');
       return false;
     }
-    if (formData.password.length < 4) {
-      toast.error('Password must be at least 4 characters');
+    if (formData.password.length < 6) {
+      toast.error('Password must be at least 6 characters');
       return false;
     }
     return true;
@@ -49,15 +52,24 @@ export const Login = () => {
 
     setLoading(true);
     try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password
+      );
+
+      const user = userCredential.user;
+
       const userData = {
-        id: Math.random().toString(36).substr(2, 9),
-        email: formData.email,
-        name: formData.email.split('@')[0],
-        createdAt: new Date().toISOString()
+        id: user.uid,
+        email: user.email,
+        name: user.email.split('@')[0],
+        createdAt: new Date().toISOString(),
+        provider: 'email'
       };
 
       localStorage.setItem('user', JSON.stringify(userData));
-      localStorage.setItem('token', 'demo-token-' + Date.now());
+      localStorage.setItem('token', user.accessToken);
       localStorage.setItem('isAuthenticated', 'true');
 
       setUser(userData);
@@ -66,8 +78,51 @@ export const Login = () => {
       toast.success('Login successful!');
       navigate('/');
     } catch (error) {
-      toast.error('Login failed. Please try again.');
-      console.error(error);
+      console.error('Login error:', error);
+      if (error.code === 'auth/user-not-found') {
+        toast.error('User not found');
+      } else if (error.code === 'auth/wrong-password') {
+        toast.error('Wrong password');
+      } else {
+        toast.error('Login failed. Please try again.');
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // ===== GMAIL LOGIN HANDLER =====
+  const handleGoogleLogin = async () => {
+    setLoading(true);
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+
+      const userData = {
+        id: user.uid,
+        email: user.email,
+        name: user.displayName || user.email.split('@')[0],
+        profileImage: user.photoURL,
+        createdAt: new Date().toISOString(),
+        provider: 'google'
+      };
+
+      localStorage.setItem('user', JSON.stringify(userData));
+      localStorage.setItem('token', user.accessToken);
+      localStorage.setItem('isAuthenticated', 'true');
+
+      setUser(userData);
+      setIsAuthenticated(true);
+
+      toast.success('Login with Google successful!');
+      navigate('/');
+    } catch (error) {
+      console.error('Google login error:', error);
+      if (error.code === 'auth/popup-closed-by-user') {
+        toast.error('Sign-in cancelled');
+      } else {
+        toast.error('Google sign-in failed. Please try again.');
+      }
     } finally {
       setLoading(false);
     }
@@ -161,11 +216,25 @@ export const Login = () => {
             </motion.button>
           </form>
 
+          {/* ===== OR DIVIDER ===== */}
           <div className="my-6 flex items-center gap-4">
             <div className="flex-1 h-px bg-white/20"></div>
             <span className="text-white/60 text-sm">OR</span>
             <div className="flex-1 h-px bg-white/20"></div>
           </div>
+
+          {/* ===== GOOGLE LOGIN BUTTON ===== */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleGoogleLogin}
+            disabled={loading}
+            type="button"
+            className="w-full py-3 bg-white/20 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/30 transition-all flex items-center justify-center gap-2 mb-4 disabled:opacity-50"
+          >
+            <FaGoogle size={20} />
+            Login with Google
+          </motion.button>
 
           <motion.button
             whileHover={{ scale: 1.05 }}

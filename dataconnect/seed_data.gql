@@ -1,0 +1,84 @@
+mutation CreateDemoData @auth(level: PUBLIC, insecureReason: "This mutation is only for seeding data and does not expose sensitive information.") @transaction {
+  user_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440000",
+      firstName: "demouser1",
+      lastName: "lName",
+      email: "demouser1@example.com",
+      createdAt: "2024-04-27T12:00:00Z"
+    },
+    {
+      id: "550e8400-e29b-41d4-a716-446655440001",
+      firstName: "demouser2",
+      lastName: "lName",
+      email: "demouser2@example.com",
+      createdAt: "2024-04-27T12:00:00Z"
+    }
+  ])
+  familyHistory_insertMany(data: [
+    {
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      conditionName: "Diabetes",
+      notes: "Father had type 2 diabetes",
+      onsetAge: 60,
+      relationship: "Father"
+    },
+    {
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      conditionName: "Heart Disease",
+      notes: "Mother had heart disease",
+      onsetAge: 70,
+      relationship: "Mother"
+    }
+  ])
+   healthMetric_insertMany(data: [
+    {
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      metricName: "Weight",
+      recordedAt: "2024-04-27T12:00:00Z",
+      unit: "lbs",
+      value: 170.0
+    },
+    {
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      metricName: "Blood Pressure",
+      recordedAt: "2024-04-27T12:00:00Z",
+      unit: "mmHg",
+      value: 120.0
+    }
+  ])
+  lifestyleChoice_insertMany(data: [
+    {
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      choiceName: "Exercise",
+      details: "Running 3 times a week",
+      recordedAt: "2024-04-27T12:00:00Z",
+      status: "Active"
+    },
+    {
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      choiceName: "Diet",
+      details: "Eating healthy foods",
+      recordedAt: "2024-04-27T12:00:00Z",
+      status: "Active"
+    }
+  ])
+   prediction_insertMany(data: [
+    {
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      conditionName: "Diabetes Risk",
+      predictedAt: "2024-04-27T12:00:00Z",
+      predictionScore: 0.8,
+      recommendationSummary: "Follow a healthy diet",
+      riskLevel: "High"
+    },
+    {
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      conditionName: "Heart Disease Risk",
+      predictedAt: "2024-04-27T12:00:00Z",
+      predictionScore: 0.9,
+      recommendationSummary: "Exercise regularly",
+      riskLevel: "High"
+    }
+  ])
+}

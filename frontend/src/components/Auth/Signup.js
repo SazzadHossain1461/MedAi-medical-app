@@ -4,6 +4,12 @@ import { motion } from 'framer-motion';
 import { useStore } from '../../store/store';
 import { toast } from 'react-toastify';
 import { FiUser, FiMail, FiLock, FiPhone, FiEye, FiEyeOff } from 'react-icons/fi';
+import { FaGoogle } from 'react-icons/fa';
+import { 
+  createUserWithEmailAndPassword, 
+  signInWithPopup 
+} from 'firebase/auth';
+import { auth, googleProvider } from '../../config/firebase';
 
 export const Signup = () => {
   const navigate = useNavigate();
@@ -68,18 +74,27 @@ export const Signup = () => {
 
     setLoading(true);
     try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password
+      );
+
+      const user = userCredential.user;
+
       const userData = {
-        id: Math.random().toString(36).substr(2, 9),
+        id: user.uid,
         fullName: formData.fullName,
         email: formData.email,
         phone: formData.phone,
         age: formData.age,
         gender: formData.gender,
-        createdAt: new Date().toISOString()
+        createdAt: new Date().toISOString(),
+        provider: 'email'
       };
 
       localStorage.setItem('user', JSON.stringify(userData));
-      localStorage.setItem('token', 'demo-token-' + Date.now());
+      localStorage.setItem('token', user.accessToken);
       localStorage.setItem('isAuthenticated', 'true');
 
       setUser(userData);
@@ -88,8 +103,72 @@ export const Signup = () => {
       toast.success('Account created successfully!');
       navigate('/');
     } catch (error) {
-      toast.error('Signup failed. Please try again.');
-      console.error(error);
+      console.error('Signup error:', error);
+      if (error.code === 'auth/email-already-in-use') {
+        toast.error('Email already in use');
+      } else if (error.code === 'auth/weak-password') {
+        toast.error('Password is too weak');
+      } else {
+        toast.error(error.message || 'Signup failed');
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // ===== GMAIL SIGNUP HANDLER =====
+  const handleGoogleSignup = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    
+    try {
+      console.log('Starting Google signup...');
+      
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+
+      console.log('Google user:', user);
+
+      const userData = {
+        id: user.uid,
+        fullName: user.displayName || 'User',
+        email: user.email,
+        phone: '',
+        age: '',
+        gender: '',
+        profileImage: user.photoURL || '',
+        createdAt: new Date().toISOString(),
+        provider: 'google'
+      };
+
+      localStorage.setItem('user', JSON.stringify(userData));
+      localStorage.setItem('token', user.accessToken);
+      localStorage.setItem('isAuthenticated', 'true');
+
+      setUser(userData);
+      setIsAuthenticated(true);
+
+      toast.success('Signed up with Google successfully!');
+      navigate('/');
+    } catch (error) {
+      console.error('Google signup error code:', error.code);
+      console.error('Google signup error message:', error.message);
+      console.error('Full error:', error);
+      
+      // Detailed error handling
+      if (error.code === 'auth/popup-closed-by-user') {
+        toast.error('Popup closed. Please try again.');
+      } else if (error.code === 'auth/popup-blocked') {
+        toast.error('Popup blocked by browser. Enable popups and try again.');
+      } else if (error.code === 'auth/operation-not-supported-in-this-environment') {
+        toast.error('Google Sign-In not supported in this environment');
+      } else if (error.code === 'auth/unauthorized-domain') {
+        toast.error('This domain is not authorized. Check Firebase settings.');
+      } else if (error.code === 'auth/invalid-api-key') {
+        toast.error('Invalid API key. Check Firebase configuration.');
+      } else {
+        toast.error(`Error: ${error.message}`);
+      }
     } finally {
       setLoading(false);
     }
@@ -247,6 +326,26 @@ export const Signup = () => {
               {loading ? 'Creating Account...' : 'Create Account'}
             </motion.button>
           </form>
+
+          {/* ===== OR DIVIDER ===== */}
+          <div className="my-6 flex items-center gap-4">
+            <div className="flex-1 h-px bg-white/20"></div>
+            <span className="text-white/60 text-sm">OR</span>
+            <div className="flex-1 h-px bg-white/20"></div>
+          </div>
+
+          {/* ===== GOOGLE SIGNUP BUTTON ===== */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleGoogleSignup}
+            disabled={loading}
+            type="button"
+            className="w-full py-3 bg-white/20 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/30 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+          >
+            <FaGoogle size={20} />
+            {loading ? 'Signing up...' : 'Sign up with Google'}
+          </motion.button>
 
           <p className="text-center text-white/80 mt-8">
             Already have an account?{' '}

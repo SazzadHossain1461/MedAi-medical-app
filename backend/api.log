@@ -811,3 +811,77 @@
 2025-11-22 13:01:41,521 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 13:01:41] "OPTIONS /api/kidney/predict HTTP/1.1" 200 -
 2025-11-22 13:01:48,261 - api_endpoints - INFO - Kidney prediction made: Stage 5 (ESRD)
 2025-11-22 13:01:48,261 - werkzeug - INFO - 127.0.0.1 - - [22/Nov/2025 13:01:48] "POST /api/kidney/predict HTTP/1.1" 200 -
+2025-11-30 12:12:20,000 - __main__ - INFO - Directory ensured: models
+2025-11-30 12:12:20,015 - __main__ - INFO - Directory ensured: logs
+2025-11-30 12:12:20,015 - __main__ - INFO - Directory ensured: datasets
+2025-11-30 12:12:20,015 - __main__ - INFO - Directory ensured: database
+2025-11-30 12:12:20,016 - __main__ - INFO - Directory ensured: instance
+2025-11-30 12:12:20,016 - __main__ - INFO - ============================================================
+2025-11-30 12:12:20,016 - __main__ - INFO - Starting Training for All Models
+2025-11-30 12:12:20,016 - __main__ - INFO - ============================================================
+2025-11-30 12:13:15,902 - __main__ - INFO - Database initialized successfully
+2025-11-30 12:13:15,902 - __main__ - INFO - ============================================================
+2025-11-30 12:13:15,902 - __main__ - INFO - Starting Dengue Model Training
+2025-11-30 12:13:15,902 - __main__ - INFO - ============================================================
+2025-11-30 12:13:16,098 - training_pipeline - INFO - Starting training pipeline for DENGUE
+2025-11-30 12:13:16,113 - training_pipeline - INFO - Preparing dengue data...
+2025-11-30 12:13:16,113 - training_pipeline - INFO - Generating sample data for dengue...
+2025-11-30 12:13:16,316 - training_pipeline - INFO - Training supervised model for dengue...
+2025-11-30 12:13:16,316 - training_pipeline - INFO - Building model for dengue...
+2025-11-30 12:13:26,316 - training_pipeline - INFO - Test Metrics - Loss: 0.2121, Accuracy: 0.8950, Precision: 0.8333, Recall: 0.8462, F1: 0.8397
+2025-11-30 12:13:26,659 - training_pipeline - INFO - Optimizing dengue model with RL...
+2025-11-30 12:13:27,113 - reward_system - INFO - Optimal threshold for dengue: 0.360 with reward: 0.8031
+2025-11-30 12:13:27,113 - training_pipeline - INFO - Optimal threshold: 0.360, Best reward: 0.8031
+2025-11-30 12:13:27,113 - reinforcement_learning - ERROR - Model for dengue not available
+2025-11-30 12:13:27,113 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-30 12:13:27,207 - training_pipeline - INFO - Training pipeline completed for DENGUE
+2025-11-30 12:13:27,207 - __main__ - INFO - Dengue model training completed successfully
+2025-11-30 12:13:27,207 - __main__ - INFO - ============================================================
+2025-11-30 12:13:27,207 - __main__ - INFO - Starting Kidney Disease Model Training
+2025-11-30 12:13:27,207 - __main__ - INFO - ============================================================
+2025-11-30 12:13:27,207 - training_pipeline - INFO - Starting training pipeline for KIDNEY
+2025-11-30 12:13:27,222 - training_pipeline - INFO - Preparing kidney data...
+2025-11-30 12:13:27,222 - training_pipeline - INFO - Generating sample data for kidney...
+2025-11-30 12:13:27,231 - training_pipeline - INFO - Training supervised model for kidney...
+2025-11-30 12:13:27,231 - training_pipeline - INFO - Building model for kidney...
+2025-11-30 12:13:31,000 - training_pipeline - INFO - Test Metrics - Loss: 0.2913, Accuracy: 0.8850, Precision: 0.9107, Recall: 0.8870, F1: 0.8987
+2025-11-30 12:13:31,051 - training_pipeline - INFO - Optimizing kidney model with RL...
+2025-11-30 12:13:31,347 - reward_system - INFO - Optimal threshold for kidney: 0.480 with reward: 0.7652
+2025-11-30 12:13:31,347 - training_pipeline - INFO - Optimal threshold: 0.480, Best reward: 0.7652
+2025-11-30 12:13:31,347 - reinforcement_learning - ERROR - Model for kidney not available
+2025-11-30 12:13:31,347 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-30 12:13:31,410 - training_pipeline - INFO - Training pipeline completed for KIDNEY
+2025-11-30 12:13:31,425 - __main__ - INFO - Kidney disease model training completed successfully
+2025-11-30 12:13:31,425 - __main__ - INFO - ============================================================
+2025-11-30 12:13:31,425 - __main__ - INFO - Starting Mental Health Model Training
+2025-11-30 12:13:31,425 - __main__ - INFO - ============================================================
+2025-11-30 12:13:31,425 - training_pipeline - INFO - Starting training pipeline for MENTAL_HEALTH
+2025-11-30 12:13:31,425 - training_pipeline - INFO - Preparing mental_health data...
+2025-11-30 12:13:31,425 - training_pipeline - INFO - Generating sample data for mental_health...
+2025-11-30 12:13:31,425 - training_pipeline - INFO - Training supervised model for mental_health...
+2025-11-30 12:13:31,425 - training_pipeline - INFO - Building model for mental_health...
+2025-11-30 12:13:34,925 - training_pipeline - INFO - Test Metrics - Loss: 0.1219, Accuracy: 0.9350, Precision: 0.7500, Recall: 0.8710, F1: 0.8060
+2025-11-30 12:13:34,957 - training_pipeline - INFO - Optimizing mental_health model with RL...
+2025-11-30 12:13:35,241 - reward_system - INFO - Optimal threshold for mental_health: 0.320 with reward: 0.8587
+2025-11-30 12:13:35,241 - training_pipeline - INFO - Optimal threshold: 0.320, Best reward: 0.8587
+2025-11-30 12:13:35,241 - reinforcement_learning - ERROR - Model for mental_health not available
+2025-11-30 12:13:35,241 - training_pipeline - INFO - Evaluating with optimal threshold...
+2025-11-30 12:13:35,316 - training_pipeline - INFO - Training pipeline completed for MENTAL_HEALTH
+2025-11-30 12:13:35,316 - __main__ - INFO - Mental health model training completed successfully
+2025-11-30 12:13:35,316 - __main__ - INFO - All models trained successfully
+2025-11-30 12:14:37,218 - __main__ - INFO - Directory ensured: models
+2025-11-30 12:14:37,218 - __main__ - INFO - Directory ensured: logs
+2025-11-30 12:14:37,219 - __main__ - INFO - Directory ensured: datasets
+2025-11-30 12:14:37,220 - __main__ - INFO - Directory ensured: database
+2025-11-30 12:14:37,221 - __main__ - INFO - Directory ensured: instance
+2025-11-30 12:14:37,221 - __main__ - INFO - ============================================================
+2025-11-30 12:14:37,223 - __main__ - INFO - Starting API Server
+2025-11-30 12:14:37,224 - __main__ - INFO - ============================================================
+2025-11-30 12:14:48,191 - __main__ - INFO - Database initialized successfully
+2025-11-30 12:14:48,659 - api_endpoints - INFO - Models loaded successfully
+2025-11-30 12:14:48,675 - __main__ - INFO - Server starting on 0.0.0.0:5000
+2025-11-30 12:14:48,722 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.109:5000
+2025-11-30 12:14:48,722 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
